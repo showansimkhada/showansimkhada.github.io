@@ -1,0 +1,15 @@
+.sides {
+    display: flex;
+    flex-direction: row;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.left-side {
+    flex: 25%;
+}
+
+.right-side {
+    flex: 75%;
+    margin-left: 20px;
+}
