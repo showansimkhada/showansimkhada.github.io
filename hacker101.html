@@ -1,0 +1,2132 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description" content="guides for finding the flags for hacker101 webpage"/>
+        <title>Hacker 101 CTF</title>
+        <link href="./styles.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <header id="head">
+            <h1>Hacker 101</h1>
+            <p>
+                This page contains the steps to capture the flags
+                from the website
+                <a href="https://ctf.hacker101.com">Hacker101</a>
+                which helps to improve the web skills.
+            </p>
+            <p>
+                Only follow the guides if you really need
+                it otherwise try your best to find the flgs. With
+                hard work you will grow more and polish your skills
+                as well
+            </p>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#ha0">A little something to get you started</a>
+                    </li>
+                    <li>
+                        <a href="#ha1">Micro-CMS v1</a>
+                    </li>
+                    <li>
+                        <a href="#ha2">Micro-CMS v2</a>
+                    </li>
+                    <li>
+                        <a href="#ha3">Encrypted Pastebin</a>
+                    </li>
+                    <li>
+                        <a href="#ha4">Photo Gallery</a>
+                    </li>
+                    <li>
+                        <a href="#ha5">Cody's First Blog</a>
+                    </li>
+                    <li>
+                        <a href="#ha6">Postbook</a>
+                    </li>
+                    <li>
+                        <a href="#ha7">Ticketastic: Demo Instance</a>
+                    </li>
+                    <li>
+                        <a href="#ha8">Ticketastic: Live Instance</a>
+                    </li>
+                    <li>
+                        <a href="#ha9">Petshop Pro</a>
+                    </li>
+                    <li>
+                        <a href="#ha10">Model E1337 - Rolling Code Lock</a>
+                    </li>
+                    <li>
+                        <a href="#ha11">TempImage</a>
+                    </li>
+                    <li>
+                        <a href="#ha12">H1 Thermostat</a>
+                    </li>
+                    <li>
+                        <a href="#ha13">Model E1337 v2 - Hardened Rolling Code Lock</a>
+                    </li>
+                    <li>
+                        <a href="#ha14">Intentional Exercise</a>
+                    </li>
+                    <li>
+                        <a href="#ha15">Rend Asunder</a>
+                    </li>
+                    <li>
+                        <a href="#ha16">BugDB v1</a>
+                    </li>
+                    <li>
+                        <a href="#ha17">BugDB v2</a>
+                    </li>
+                    <li>
+                        <a href="#ha18">Oauthbreaker</a>
+                    </li>
+                    <li>
+                        <a href="#ha19">Mobile Webdev</a>
+                    </li>
+                    <li>
+                        <a href="#ha20">XSS Playground by zseano</a>
+                    </li>
+                    <li>
+                        <a href="#ha21">OSU CTF</a>
+                    </li>
+                    <li>
+                        <a href="#ha22">Grayhatcon CTF</a>
+                    </li>
+                    <li>
+                        <a href="#ha23">RTFM</a>
+                    </li>
+                    <li>
+                        <a href="#ha24">Hackyholidays CTF</a>
+                    </li>
+                    <li>
+                        <a href="#ha25">Y2FuIHlvdSByZWNvbj8/</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <hr/>
+            <!-- A little some to get you started -->
+            <section id="ha0">
+                <div class="ha-header">
+                    <p>Difficulty: Trival</p>
+                    <p>Name: A little something to get you started</p>
+                    <p>Skills: Web</p>
+                    <p>Flags to capture: 1</p>
+                </div>
+                <p class="ha-center">Flag 0</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li>Take a look at the source for the page</li>
+                            <li>Does anything seem out of the ordinary?</li>
+                            <li>The page looks really plain</li>
+                            <li>What is that image?</li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title: Access of the resource file.</li>
+                            <li>Severity: Low</li>
+                            <li>Description: Can access all sourced resources for the web page.</li>
+                            <li>Reproduction: Simply add "/background.png" at last of the url and the resource can be loaded.</li>
+                            <li>Impact: Attacker can replace the original resource with fake one.</li>
+                            <li>Mitigation: Protect the resources path or make sure it can only be accessed with authorised personal.</li>
+                            <li>Affected assets: Source files</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <a href="#head">Go to top</a>
+            <hr/>
+            <!-- Micro-CMS v1 -->
+            <section id="ha1">
+                <div class="ha-header">
+                    <p>Difficulty: Easy</p>
+                    <p>Name: Micro-CMS v1</p>
+                    <p>Skills: Web</p>
+                    <p>Flags to capture: 4</p>
+                </div>
+                <p class="ha-center">Flag 0</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li>Try creating a new page</li>
+                            <li>How are pages indexed?</li>
+                            <li>Look at the sequence of IDs</li>
+                            <li>If the front door doesn't open, try the window</li>
+                            <li>In what ways can you retrieve page contents?</li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="ha-center">Flag 1</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li>Make sure you tamper with every input</li>
+                            <li>Have you tested fot the usual culprits? XSS, SQL injection, path injection</li>
+                            <li>Bugs often occur when an input should always be one type and turns out to be another</li>
+                            <li>Remember, form submissions aren't the only inputs that come from browsers</li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="ha-center">Flag 2</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li>Sometimes a given input will affect more than one page</li>
+                            <li>The bug you are looking for doesn't exists in the most obvious place this input is shown</li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="ha-center">Flag 3</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li>Script tags are great but what other options do you have?</li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <a href="#head">Go to top</a>
+            <hr/>
+            <!-- Micro-CMS v2 -->
+            <section id="ha2">
+                <div class="ha-header">
+                    <p>Difficulty: Moderate</p>
+                    <p>Name: Micro-CMS v2</p>
+                    <p>Skills: Web</p>
+                    <p>Flags to capture: 3</p>
+                </div>
+                <p class="ha-center">Flag 0</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="ha-center">Flag 1</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="ha-center">Flag 2</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <a href="#head">Go to top</a>
+            <hr/>
+            <!-- Encrypted Pastebin -->
+            <section id="ha3">
+                <div class="ha-header">
+                    <p>Difficulty: Hard</p>
+                    <p>Name: Encrypted Pastebin</p>
+                    <p>Skills: Web, Crypto</p>
+                    <p>Flags to capture: 4</p>
+                </div>
+                <p class="ha-center">Flag 0</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="ha-center">Flag 1</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="ha-center">Flag 2</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="ha-center">Flag 3</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <a href="#head">Go to top</a>
+            <hr/>
+            <!-- Photo Gallery -->
+            <section id="ha4">
+                <div class="ha-header">
+                    <p>Difficulty: Moderate</p>
+                    <p>Name: Photo Gallery</p>
+                    <p>Skills: Web</p>
+                    <p>Flags to capture: 3</p>
+                </div>
+                <p class="ha-center">Flag 0</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="ha-center">Flag 1</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="ha-center">Flag 2</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <a href="#head">Go to top</a>
+            <hr/>
+            <!-- Cody's First Blog -->
+            <section id="ha5">
+                <div class="ha-header">
+                    <p>Difficulty: Moderate</p>
+                    <p>Name: Cody's First Blog</p>
+                    <p>Skills: Web</p>
+                    <p>Flags to capture: 3</p>
+                </div>
+                <p class="ha-center">Flag 0</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="ha-center">Flag 1</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="ha-center">Flag 2</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <a href="#head">Go to top</a>
+            <hr/>
+            <!-- Postbook -->
+            <section id="ha6">
+                <div class="ha-header">
+                    <p>Difficulty: Easy</p>
+                    <p>Name: Postbook</p>
+                    <p>Skills: Web</p>
+                    <p>Flags to capture: 7</p>
+                </div>
+                <p class="ha-center">Flag 0</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li>The person with username "user" has a very easy password..</li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title: Weak password</li>
+                            <li>Severity: High</li>
+                            <li>Description: Username with name "user" is using weak password</li>
+                            <li>Reproduction: Can login the username "user" with password password.</li>
+                            <li>Impact: Can be easily accessible by attackers</li>
+                            <li>Mitigation: Apply the rules to accept the password during signup and updating password.</li>
+                            <li>Affected assets: Credentials</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="ha-center">Flag 1</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li>Try viewing your own post and then see if you can change the ID.</li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title: Can view other's posts</li>
+                            <li>Severity: High</li>
+                            <li>Description: Can easily access other's posts even those are private to specific user.</li>
+                            <li>Reproduction: Change the parameter /index.php?page=view.php&id=2 and enter now you can view the secret post of another user.</li>
+                            <li>Impact: Leak of data and can be compormised.</li>
+                            <li>Mitigation: Protect the posts and allow only authorised user to acces it.</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="ha-center">Flag 2</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li>You should definitely use "Inspect Element" on the form when creating a new post</li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title: Hidden element revel the user id.</li>
+                            <li>Severity: High</li>
+                            <li>Description: Allow any users to alter the user id.</li>
+                            <li>Reproduction: Alter the user-id for the hidden input and hit save post.</li>
+                            <li>Impact:</li>
+                            <li>Mitigation: Hidden elements should be protected and should not reveal the information about the user id.</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="ha-center">Flag 3</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li>185 * 5</li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="ha-center">Flag 4</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li>You can edit your own posts, what about someone lese's?</li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title: Can edit other's post</li>
+                            <li>Severity: High</li>
+                            <li>Description: Allow other users to edit someone else post</li>
+                            <li>Reproduction: After login with any user pass this (/index.php?page=edit.php&id=3) parameter and hit Save post.</li>
+                            <li>Impact: Can alter the post posted by other users.</li>
+                            <li>Mitigation: Protect the post posted by other users and make sure only related parameters can be authorized.</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="ha-center">Flag 5</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li>The cookie allows you to stay signed in. Can you figure out how they work so you can sign in to user with ID 1?</li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="ha-center">Flag 6</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li>Deleting a post seems to take an ID that is not a number. Can you figure out what it is?</li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <a href="#head">Go to top</a>
+            <hr/>
+            <!-- Ticketastic: Demo Instance -->
+            <section id="ha7">
+                <div class="ha-header">
+                    <p>Difficulty: Moderate</p>
+                    <p>Name: Ticketastic: Demo Instance</p>
+                    <p>Skills: Web</p>
+                    <p>Flags to capture: 0</p>
+                </div>
+                <p class="ha-center">Flag 0</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li>no Hints</li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <a href="#head">Go to top</a>
+            <hr/>
+            <!-- Ticketastic: Live Instance -->
+            <section id="ha8">
+                <div class="ha-header">
+                    <p>Difficulty: Moderate</p>
+                    <p>Name: Ticketastic: Live Instance</p>
+                    <p>Skills: Web</p>
+                    <p>Flags to capture: 2</p>
+                </div>
+                <p class="ha-center">Flag 0</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li>This level and the Ticketastic demo instance are running the same code</li>
+                            <li>Take a look at addUser on the demo instance</li>
+                            <li>What is missing?</li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="ha-center">Flag 1</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li>No hint for this flag.</li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <a href="#head">Go to top</a>
+            <hr/>
+            <!-- Petshop Pro -->
+            <section id="ha9">
+                <div class="ha-header">
+                    <p>Difficulty: Easy</p>
+                    <p>Name: Petshop Pro</p>
+                    <p>Skills: Web</p>
+                    <p>Flags to capture: 3</p>
+                </div>
+                <p class="ha-center">Flag 0</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li>Something looks out of place with checkout</li>
+                            <li>It's always nice to get free stuff</li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="ha-center">Flag 1</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li>There must be a way to administer the app</li>
+                            <li>Tools may help you find the entrypoint</li>
+                            <li>Tools are also great for finding credentials</li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="ha-center">Flag 2</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li>Always test every input</li>
+                            <li>Bugs don't always appear in a place where the data is entered</li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <a href="#head">Go to top</a>
+            <hr/>
+            <!-- Model E1337 - Rolling Code Lock -->
+            <section id="ha10">
+                <div class="ha-header">
+                    <p>Difficulty: Hard</p>
+                    <p>Name: Model E1337 - Rolling Code Lock</p>
+                    <p>Skills: Web, Math</p>
+                    <p>Flags to capture: 2</p>
+                </div>
+                <p class="ha-center">Flag 0</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li>Hidden functionality is good functionality</li>
+                            <li>Comments can often reveal important things</li>
+                            <li>XML from untrusted sources must be processed carefully</li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="ha-center">Flag 1</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li></li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <a href="#head">Go to top</a>
+            <hr/>
+            <!-- TempImage -->
+            <section id="ha11">
+                <div class="ha-header">
+                    <p>Difficulty: Moderate</p>
+                    <p>Name: TempImage</p>
+                    <p>Skills: Web</p>
+                    <p>Flags to capture: 2</p>
+                </div>
+                <p class="ha-center">Flag 0</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li>File uploads can be hard to pin down</li>
+                            <li>What happens to your filename when you see an uploaded file?</li>
+                            <li>What if you make a small change to the path?</li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="ha-center">Flag 1</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li>It clearly wants one specific format</li>
+                            <li>If you can't bypass that check, what can you do?</li>
+                            <li>Read up on PNG chunks</li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <a href="#head">Go to top</a>
+            <hr/>
+            <!-- H1 Thermostat -->
+            <section id="ha12">
+                <div class="ha-header">
+                    <p>Difficulty: Easy</p>
+                    <p>Name: H1 Thermostat</p>
+                    <p>Skills: Android</p>
+                    <p>Flags to capture: 2</p>
+                </div>
+                <p class="ha-center">Flag 0</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li>Communication is key</li>
+                            <li>Have you looked at what the app is sending to the server?</li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="ha-center">Flag 1</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li>Doesn't the MAC seem interesting?</li>
+                            <li>Access to the source code would help</li>
+                            <li>Check out the Android Quickstart video from Hacker101</li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <a href="#head">Go to top</a>
+            <hr/>
+            <!-- Model E1337 v2 - Hardened Rolling Code Lock -->
+            <section id="ha13">
+                <div class="ha-header">
+                    <p>Difficulty: Expert</p>
+                    <p>Name: Model E1337 v2 - Hardened Rolling Code Lock</p>
+                    <p>Skills: Math</p>
+                    <p>Flags to capture: 1</p>
+                </div>
+                <p class="ha-center">Flag 0</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li>404 hint not found</li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <a href="#head">Go to top</a>
+            <hr/>
+            <!-- Intentional Exercise -->
+            <section id="ha14">
+                <div class="ha-header">
+                    <p>Difficulty: Moderate</p>
+                    <p>Name: Intentional Exercise</p>
+                    <p>Skills: Android</p>
+                    <p>Flags to capture: 1</p>
+                </div>
+                <p class="ha-center">Flag 0</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li>Check the manifest</li>
+                            <li>Is the link really broken?</li>
+                            <li>Launching from another app might help</li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <a href="#head">Go to top</a>
+            <hr/>
+            <!-- Rend Asunder -->
+            <section id="ha15">
+                <div class="ha-header">
+                    <p>Difficulty: Expert</p>
+                    <p>Name: Rend Asunder</p>
+                    <p>Skills: Native</p>
+                    <p>Flags to capture: 3</p>
+                </div>
+                <p class="ha-center">Flag 0</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li>What do you have access to?</li>
+                            <li>Look around your sandbox</li>
+                            <li>Some places are Definitely mOre iMportant than others</li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="ha-center">Flag 1</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li>he rendered page looks a bit odd</li>
+                            <li>Can you look outside your iframe?</li>
+                            <li>There might be something in the body or URL of the parent page</li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="ha-center">Flag 2</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li>You need RCE here. No other way to put it!</li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <a href="#head">Go to top</a>
+            <hr/>
+            <!-- BugDB v1 -->
+            <section id="ha16">
+                <div class="ha-header">
+                    <p>Difficulty: Easy</p>
+                    <p>Name: BugDB v1</p>
+                    <p>Skills: Web, GraphQL</p>
+                    <p>Flags to capture: 1</p>
+                </div>
+                <p class="ha-center">Flag 0</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li>What can you see? What can you not see?</li>
+                            <li>What data types are involved?</li>
+                            <li>Have you tried querying different endpoints?</li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <a href="#head">Go to top</a>
+            <hr/>
+            <!-- BugDB v2 -->
+            <section id="ha17">
+                <div class="ha-header">
+                    <p>Difficulty: Easy</p>
+                    <p>Name: BugDB v2</p>
+                    <p>Skills: Web, GraphQL</p>
+                    <p>Flags to capture: 1</p>
+                </div>
+                <p class="ha-center">Flag 0</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                             <li>What has changed since last version?</li>
+                            <li>What do the queries tell you?</li>
+                            <li>Have you tried a mutation?</li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <a href="#head">Go to top</a>
+            <hr/>
+            <!-- Oauthbreaker -->
+            <section id="ha18">
+                <div class="ha-header">
+                    <p>Difficulty: Moderate</p>
+                    <p>Name: Oauthbreaker</p>
+                    <p>Skills: Android</p>
+                    <p>Flags to capture: 2</p>
+                </div>
+                <p class="ha-center">Flag 0</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li>Check the manifest</li>
+                            <li>Can you trigger activities elsewhere?</li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="ha-center">Flag 1</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li>Control the content</li>
+                            <li>Web views often expose interesting functionality</li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <a href="#head">Go to top</a>
+            <hr/>
+            <!-- Mobile Webdev -->
+            <section id="ha19">
+                <div class="ha-header">
+                    <p>Difficulty: Moderate</p>
+                    <p>Name: Mobile Webdev</p>
+                    <p>Skills: Android</p>
+                    <p>Flags to capture: 2</p>
+                </div>
+                <p class="ha-center">Flag 0</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li>Make sure you understand what you're up against</li>
+                            <li>Look for all functionality</li>
+                            <li>Sometimes unfinished code can give you a leg up</li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="ha-center">Flag 1</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li>This function is clearly broken</li>
+                            <li>Try the ... direct route</li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <a href="#head">Go to top</a>
+            <hr/>
+            <!-- XSS Playgorund by zseano -->
+            <section id="ha20">
+                <div class="ha-header">
+                    <p>Difficulty: Moderate</p>
+                    <p>Name: XSS Playgorund by zseano</p>
+                    <p>Skills: Web</p>
+                    <p>Flags to capture: 1</p>
+                </div>
+                <p class="ha-center">Flag 0</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li></li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <a href="#head">Go to top</a>
+            <hr/>
+            <!-- OSU CTF -->
+            <section id="ha21">
+                <div class="ha-header">
+                    <p>Difficulty: Moderate</p>
+                    <p>Name: OSU CTF</p>
+                    <p>Skills: Web</p>
+                    <p>Flags to capture: 1</p>
+                </div>
+                <p class="ha-center">Flag 0</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li>
+                                Always check the JS on the page for unlinked routes!
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <a href="#head">Go to top</a>
+            <hr/>
+            <!-- Grayhatcon CTF -->
+            <section id="ha22">
+                <div class="ha-header">
+                    <p>Difficulty: Moderate</p>
+                    <p>Name: Grayhatcon CTF</p>
+                    <p>Skills: Web</p>
+                    <p>Flags to capture: 4</p>
+                </div>
+                <p class="ha-center">Flag 0</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li>
+                                The registration form might have fields you missed!
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+                 <p class="ha-center">Flag 1</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li>
+                                
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+                 <p class="ha-center">Flag 2</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li>
+                                
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+                 <p class="ha-center">Flag 3</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li>
+                                
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <a href="#head">Go to top</a>
+            <hr/>
+            <!-- RTFM -->
+            <section id="ha23">
+                <div class="ha-header">
+                    <p>Difficulty: Moderate</p>
+                    <p>Name: RTFM</p>
+                    <p>Skills: Web</p>
+                    <p>Flags to capture: 8</p>
+                </div>
+                <p class="ha-center">Flag 0</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li>Wordlists will help you find something to do</li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="ha-center">Flag 1</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li>
+                                If a GET doesn’t do anything, try a different
+                                HTTP verb.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="ha-center">Flag 2</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li>
+                                Maybe you can edit your profile? but what fields
+                                can you change?
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="ha-center">Flag 3</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li>
+                                Sometimes developers hide extra features
+                                into a page… but how can you access it?
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="ha-center">Flag 4</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li>
+                                Have you read the new version of the API's
+                                documentations?
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="ha-center">Flag 5</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li>
+                                How can you use the same session across
+                                multiple different instances and versions?
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="ha-center">Flag 6</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li>
+                                Some features were never quite finished
+                                properly in some versions
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="ha-center">Flag 7</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li>
+                                Take a close look at the returned headers from
+                                all of your endpoints, is there anything different
+                                about one of them? Maybe theres a second server
+                                somewhere? Possibly we can get access to things
+                                higher up...
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <a href="#head">Go to top</a>
+            <hr/>
+            <!-- Hackyholidays CTF -->
+            <section id="ha24">
+                <div class="ha-header">
+                    <p>Difficulty: Moderate</p>
+                    <p>Name: Hackyholidays CTF</p>
+                    <p>Skills: Web</p>
+                    <p>Flags to capture: 12</p>
+                </div>
+                <p class="ha-center">Flag 0</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li></li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="ha-center">Flag 1</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li></li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="ha-center">Flag 2</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li></li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="ha-center">Flag 3</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li></li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="ha-center">Flag 4</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li></li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="ha-center">Flag 5</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li></li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="ha-center">Flag 6</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li></li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="ha-center">Flag 7</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li></li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="ha-center">Flag 8</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li></li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="ha-center">Flag 9</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li></li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="ha-center">Flag 10</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li></li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="ha-center">Flag 11</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li></li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <a href="#head">Go to top</a>
+            <hr/>
+            <!-- Y2FuIHlvdSByZWNvbj8 -->
+            <section id="ha25">
+                <div class="ha-header">
+                    <p>Difficulty: Moderate</p>
+                    <p>Name: Y2FuIHlvdSByZWNvbj8</p>
+                    <p>Skills: Web, Recon</p>
+                    <p>Flags to capture: 3</p>
+                </div>
+                <p class="ha-center">Flag 0</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li>How can you abuse the site to disable or rewrite the Apache rule?</li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="ha-center">Flag 1</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li>The endpoint doesn’t return much information, maybe there's some other parameters</li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="ha-center">Flag 2</p>
+                <div class="sides">
+                    <div class="left-side ha-hints">
+                        <p>Given hints:</p>
+                        <ul>
+                            <li>Check out the obfuscated JS, can you discover an endpoint and it's parameters.</li>
+                        </ul>
+                    </div>
+                    <div class="right-side ha-report">
+                        <p>Report</p>
+                        <ul>
+                            <li>Title:</li>
+                            <li>Severity:</li>
+                            <li>Description:</li>
+                            <li>Reproduction:</li>
+                            <li>Impact:</li>
+                            <li>Mitigation:</li>
+                            <li>Affected assets:</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>  
+            <a href="#head">Go to top</a>
+            <hr/>    
+        </main>
+    </body>
+</html>
