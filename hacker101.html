@@ -164,13 +164,13 @@
                     <div class="right-side ha-report">
                         <p>Report</p>
                         <ul>
-                            <li>Title:</li>
-                            <li>Severity:</li>
-                            <li>Description:</li>
-                            <li>Reproduction:</li>
-                            <li>Impact:</li>
-                            <li>Mitigation:</li>
-                            <li>Affected assets:</li>
+                            <li>Title: Access of unauthorised page</li>
+                            <li>Severity: High</li>
+                            <li>Description: Can access unauthorised page passing the other action type.</li>
+                            <li>Reproduction: The page 4 is not authorised to public but passing the parameter /page/edit/4 reveal the information of the page.</li>
+                            <li>Impact: Can reveal the sensitive information to others</li>
+                            <li>Mitigation: Apply the authorisation required to edit the page</li>
+                            <li>Affected assets: Authorisation</li>
                         </ul>
                     </div>
                 </div>
@@ -188,13 +188,13 @@
                     <div class="right-side ha-report">
                         <p>Report</p>
                         <ul>
-                            <li>Title:</li>
-                            <li>Severity:</li>
-                            <li>Description:</li>
-                            <li>Reproduction:</li>
-                            <li>Impact:</li>
-                            <li>Mitigation:</li>
-                            <li>Affected assets:</li>
+                            <li>Title: Other type of id is accepted.</li>
+                            <li>Severity: None</li>
+                            <li>Description: Can pass the id as {id}' which is invalid</li>
+                            <li>Reproduction: Pass the parameter in the url after .com as /page/edit/{id}' wher id can be 1,2, or 3 or so on.</li>
+                            <li>Impact: Security is breacheable</li>
+                            <li>Mitigation: Only valid id can be passed</li>
+                            <li>Affected assets: form submission methods</li>
                         </ul>
                     </div>
                 </div>
@@ -210,13 +210,13 @@
                     <div class="right-side ha-report">
                         <p>Report</p>
                         <ul>
-                            <li>Title:</li>
-                            <li>Severity:</li>
-                            <li>Description:</li>
-                            <li>Reproduction:</li>
-                            <li>Impact:</li>
-                            <li>Mitigation:</li>
-                            <li>Affected assets:</li>
+                            <li>Title: Input type </li>
+                            <li>Severity: High</li>
+                            <li>Description: The input type is not defined as a result it can pass html elments</li>
+                            <li>Reproduction: Create a new page and pass the input as &ltbutton&gt &lt/button&gt which will change the list order.</li>
+                            <li>Impact: Visibility of the page</li>
+                            <li>Mitigation: Enable the type of the input it accepts</li>
+                            <li>Affected assets: Elements</li>
                         </ul>
                     </div>
                 </div>
@@ -231,13 +231,13 @@
                     <div class="right-side ha-report">
                         <p>Report</p>
                         <ul>
-                            <li>Title:</li>
-                            <li>Severity:</li>
-                            <li>Description:</li>
-                            <li>Reproduction:</li>
-                            <li>Impact:</li>
-                            <li>Mitigation:</li>
-                            <li>Affected assets:</li>
+                            <li>Title: Script of page</li>
+                            <li>Severity: High</li>
+                            <li>Description: Altering the script might leak imporatant data and give access to threat actors.</li>
+                            <li>Reproduction: Adding the onClick attribute to button on page 2 with some function will reveal the flag.</li>
+                            <li>Impact: Scrip and server side</li>
+                            <li>Mitigation: Do not allow attributes to be modified</li>
+                            <li>Affected assets: Server side and scripts.</li>
                         </ul>
                     </div>
                 </div>
