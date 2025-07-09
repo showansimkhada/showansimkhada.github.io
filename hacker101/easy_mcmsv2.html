@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="descritption" content="Micro-CMS V2"/>
+        <link rel="stylesheet" href="./styles.css"/>
+        <title>Micro-CMS v1</title>
+    </head>
+    <body>
+        <header>
+            <h1 class="ha-center">Micro-CMS v2</h1>
+            <p>Used burp to find all the flags.</p>
+            <nav>
+                <ol>
+                    <li>
+                        <a href="#flag0">Flag 0</a>
+                    </li>
+                    <li>
+                        <a href="#flag1">Flag 1</a>
+                    </li>
+                    <li>
+                        <a href="#flag2">Flag 2</a>
+                    </li>
+                </ol>
+            </nav>
+        </header>
+        <section id="flag0">
+            <p>Hints</p>
+            <ul>
+                <li>
+                    Regular users can only see public pages
+                </li>
+                <li>
+                    Getting admin access might require a more perfect union
+                </li>
+                <li>
+                    Knowing the password is cool, but there are other approaches that might be easier
+                </li>
+            </ul>
+              <table>
+                <caption>Report</caption>
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>Severity</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>Description</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>Reproduction</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>Impact</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>Mitigation</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>Affected assets</th>
+                        <td></td>
+                    </tr>
+                </thead>
+            </table>
+        </section>
+        <section id="flag1">
+            <p>Hints</p>
+            <ul>
+                <li>
+                    What actions could you perform as a regular user on the last level, which you can't now?
+                </li>
+                <li>
+                    Just because request fails with one method doesn't mean it will fail with a different method
+                </li>
+                <li>
+                    Different requests often have different required authorisation
+                </li>
+            </ul>
+            <table>
+                <caption>Report</caption>
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <td>Access to Page</td>
+                    </tr>
+                    <tr>
+                        <th>Severity</th>
+                        <td>High</td>
+                    </tr>
+                    <tr>
+                        <th>Description</th>
+                        <td>Can access the unauthorised page by anyone.</td>
+                    </tr>
+                    <tr>
+                        <th>Reproduction</th>
+                        <td>Pass the parameter as POST /page/edi/1 and it will reveal the FLAG</td>
+                    </tr>
+                    <tr>
+                        <th>Impact</th>
+                        <td>Privacy</td>
+                    </tr>
+                    <tr>
+                        <th>Mitigation</th>
+                        <td>Correct authorisation are needer to view any page.</td>
+                    </tr>
+                    <tr>
+                        <th>Affected assets</th>
+                        <td>Can tamper the files.</td>
+                    </tr>
+                </thead>
+            </table>
+        </section>
+         <section id="flag2">
+            <p>Hints</p>
+            <ul>
+                <li>
+                    Credentials are secret, flags are secret. Coincidence?
+                </li>
+            </ul>
+              <table>
+                <caption>Report</caption>
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>Severity</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>Description</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>Reproduction</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>Impact</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>Mitigation</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>Affected assets</th>
+                        <td></td>
+                    </tr>
+                </thead>
+            </table>
+        </section>
+    </body>
+</html>
