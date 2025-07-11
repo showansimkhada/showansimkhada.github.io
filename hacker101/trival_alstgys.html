@@ -1,65 +1,126 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <meta name="description" content="A little something to get you started"/>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="A little something to get you started">
         <title>A little something to get you started</title>
-        <link rel="stylesheet" href="./styles.css"/>
+        <link rel="stylesheet" href="./styles.css">
     </head>
     <body>
         <header>
-            <h1 class="ha-center">A little something to get you started</h1>
+            <h1 class="ha-center">
+                A little something to get you started
+            </h1>
+            <nav class="sides">
+                <p class="left-side">
+                    Skills: Web
+                </p>
+                <p>
+                    Difficulty: Easy
+                </p>
+                <p>
+                    <a class="right-side" href="./">
+                        Go to previous page
+                    </a>
+                </p>
+            </nav>
+            <hr>
         </header>
-        <section id="flag0">
-            <h2>Flag 0</h2>
-            <p>Hints</p>
-            <ul>
-                <li>
-                    Take a look at the source for the page
-                </li>
-                <li>
-                    Does anything seem out of the ordinary?
-                </li>
-                <li>
-                    The page looks really plain
-                </li>
-                <li>
-                    What is that image?
-                </li>
-            </ul>
-              <table>
-                <caption>Report</caption>
-                <thead>
-                    <tr>
-                        <th>Title</th>
-                        <td>Access of file</td>
-                    </tr>
-                    <tr>
-                        <th>Severity</th>
-                        <td>High</td>
-                    </tr>
-                    <tr>
-                        <th>Description</th>
-                        <td>Can access the file</td>
-                    </tr>
-                    <tr>
-                        <th>Reproduction</th>
-                        <td>Pass the parameter /background.png to the url and flag is reveled.</td>
-                    </tr>
-                    <tr>
-                        <th>Impact</th>
-                        <td>Privacy of the files.</td>
-                    </tr>
-                    <tr>
-                        <th>Mitigation</th>
-                        <td>Implement authorisation and only give access to those who are authorised.</td>
-                    </tr>
-                    <tr>
-                        <th>Affected assets</th>
-                        <td>Security</td>
-                    </tr>
-                </thead>
-            </table>
-        </section>
+        <h2>
+            Flag 0:
+        </h2>
+        <div class="sides">
+            <section class="right-side" id="flag0">
+                <p>Hints</p>
+                <ul>
+                    <li>
+                        Take a look at the source for the page
+                    </li>
+                    <li>
+                        Does anything seem out of the ordinary?
+                    </li>
+                    <li>
+                        The page looks really plain
+                    </li>
+                    <li>
+                        What is that image?
+                    </li>
+                </ul>
+            </section>
+            <section class="left-side">
+                <p>
+                    <strong>
+                        Title:
+                    </strong>
+                    Unauthorised access to internal file via direct GET request
+                </p>
+                <ul>
+                    <li>
+                        Attack Vector: Network
+                    </li>
+                    <li>
+                        Attack Complexity: Low
+                    </li>
+                    <li>
+                        Privileges Required: None
+                    </li>
+                    <li>
+                        User Interaction: Required
+                    </li>
+                    <li>
+                        Scope: Unchanged
+                    </li>
+                    <li>
+                        Confidentiality: High
+                    </li>
+                    <li>
+                        Integrity: High
+                    </li>
+                    <li>
+                        Availablility: None
+                    </li>
+                </ul>
+            </section>
+        </div>
+        <h2>
+            Reproduction Steps:
+        </h2>
+        <ol>
+            <li>
+                Intercept the HTTP traffic using Burp Suite while browsing the
+                application.
+            </li>
+            <li>
+                Locate the GET request to /background.png in the HTTP history.
+            </li>
+            <li>
+                Reply the request directly in the browser.
+            </li>
+            <li>
+                When the specific parameter is passed in the URL
+                (e.g., /background.png), the application responds with the
+                flag.
+            </li>
+            <li>
+                No authentication or special privileges are required to access
+                the content.
+            </li>
+        </ol>
+        <h2>
+            Impact Statement:
+        </h2>
+        <p>
+            The ability to access internal files via a GET request exposes
+            sensitive content to unauthorized users. In this case, retrieving
+            the flag demonstrates a file exposure vulnerability that compromises
+            the confidentiality of the system.
+        </p>
+        <p>
+            Additionally, because the file was not meant to be publicly accessible,
+            this weakens the integrity of the application's access control model
+            and may allow attackers to enumerate or retrieve additional internal files.
+        </p>
+        <hr>
     </body>
 </html>
