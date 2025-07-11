@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="descritption" content="Micro-CMS V1">
+        <title>Micro-CMS v1</title>
+        <link rel="stylesheet" href="./styles.css">
+    </head>
+    <body>
+        <header>
+            <h1 class="ha-center">
+                Micro-CMS v1
+            </h1>
+            <nav class="sides">
+                <p class="left-side">
+                    Skills: Web
+                </p>
+                <p>
+                    Difficulty: Easy
+                </p>
+                <p>
+                    <a class="right-side" href="./">
+                        Go to previous page
+                    </a>
+                </p>
+            </nav>
+            <nav id="nav" class="nav-line">
+                <a href="#flag0">Flag 0</a>
+                <a href="#flag1">Flag 1</a>
+                <a href="#flag2">Flag 2</a>
+                <a href="#flag3">Flag 3</a>
+            </nav>
+        </header>
+        <hr>
+        <h2>
+            Flag 0:
+        </h2>
+        <div class="sides">
+            <section class="right-side" id="flag0">
+                <p>Hints</p>
+                <ul>
+                    <li>
+                        Try creating a new page
+                    </li>
+                    <li>
+                        How are pages indexed?
+                    </li>
+                    <li>
+                        Look at the sequence of IDs
+                    </li>
+                    <li>
+                        If the front door doesn't open, try the window
+                    </li>
+                    <li>
+                        In what ways can you retrieve page contents?
+                    </li>
+                </ul>
+            </section>
+            <section class="left-side">
+                <p>
+                    <strong>
+                        Title:
+                    </strong>
+                    Unauthorised access to internal file via direct GET request
+                </p>
+                <ul>
+                    <li>
+                        Attack Vector: Network
+                    </li>
+                    <li>
+                        Attack Complexity: Low
+                    </li>
+                    <li>
+                        Privileges Required: None
+                    </li>
+                    <li>
+                        User Interaction: Required
+                    </li>
+                    <li>
+                        Scope: Unchanged
+                    </li>
+                    <li>
+                        Confidentiality: High
+                    </li>
+                    <li>
+                        Integrity: High
+                    </li>
+                    <li>
+                        Availablility: None
+                    </li>
+                </ul>
+            </section>
+        </div>
+        <h2>
+            Reproduction Steps:
+        </h2>
+        <ol>
+            <li>
+                Intercept the HTTP traffic using Burp Suite while browsing the
+                application.
+            </li>
+            <li>
+                Locate the GET request to /page/{id} where id numbers in the HTTP history.
+            </li>
+            <li>
+                Try different different id where 4 needs autorisation
+            </li>
+            <li>
+                When the parameter is modified as (e.g, /page/edit/4) and passed
+                in the URL the application responds with the flag.
+            </li>
+            <li>
+                No authentication or special privileges are required to access
+                the content.
+            </li>
+        </ol>
+        <h2>
+            Impact Statement:
+        </h2>
+        <p>
+            The ability to access internal files via a GET request exposes
+            sensitive content to unauthorized users. In this case, retrieving
+            the flag demonstrates a file exposure vulnerability that compromises
+            the confidentiality of the system.
+        </p>
+        <p>
+            Additionally, because the file was not meant to be publicly accessible,
+            this weakens the integrity of the application's access control model
+            and may allow attackers to enumerate or retrieve additional internal files.
+        </p>
+        <a href="#nav">Go to top</a>
+        <hr>
+        <h2>
+            Flag 1:
+        </h2>
+        <div class="sides">
+            <section class="right-side" id="flag1">
+                <p>Hints</p>
+                <ul>
+                    <li>
+                        Make sure you tamper with every input
+                    </li>
+                    <li>
+                        Have you tested for the usual culprits? XSS, SQL injection,
+                        path injection
+                    </li>
+                    <li>
+                        Bugs often occur when an input should always be one type and
+                        turns out to be another
+                    </li>
+                    <li>
+                        Remember, form submissions aren't the only inputs that come
+                        from browsers
+                    </li>
+                </ul>
+            </section>
+            <section class="left-side">
+                <p>
+                    <strong>
+                        Title:
+                    </strong>
+                    Accepts character with ID
+                </p>
+                <ul>
+                    <li>
+                        Attack Vector: Network
+                    </li>
+                    <li>
+                        Attack Complexity: Low
+                    </li>
+                    <li>
+                        Privileges Required: None
+                    </li>
+                    <li>
+                        User Interaction: Required
+                    </li>
+                    <li>
+                        Scope: Unchanged
+                    </li>
+                    <li>
+                        Confidentiality: High
+                    </li>
+                    <li>
+                        Integrity: High
+                    </li>
+                    <li>
+                        Availablility: None
+                    </li>
+                </ul>
+            </section>
+        </div>
+        <h2>
+            Reproduction Steps:
+        </h2>
+        <ol>
+            <li>
+                Intercept the HTTP traffic using Burp Suite while browsing the
+                application.
+            </li>
+            <li>
+                Locate the GET request to /page/edit/1 in the HTTP history.
+            </li>
+            <li>
+                Reply the request directly in the browser.
+            </li>
+            <li>
+                When the specific parameter is passed in the URL
+                (e.g., /page/edit/1'), the application responds with the
+                flag.
+            </li>
+            <li>
+                No authentication or special privileges are required to access
+                the content.
+            </li>
+        </ol>
+        <h2>
+            Impact Statement:
+        </h2>
+        <p>
+            The ability to access internal files via a GET request exposes
+            sensitive content to unauthorized users. In this case, retrieving
+            the flag demonstrates a file exposure vulnerability that compromises
+            the confidentiality of the system.
+        </p>
+        <p>
+            Additionally, because the file was not meant to be publicly accessible,
+            this weakens the integrity of the application's access control model
+            and may allow attackers to enumerate or retrieve additional internal files.
+        </p>
+        <a href="#nav">Go to top</a>
+        <hr>
+        <h2>
+            Flag 2:
+        </h2>
+        <div class="sides">
+            <section class="right-side" id="flag2">
+                <p>Hints</p>
+                <ul>
+                    <li>
+                        Sometimes a given input will affect more than one page
+                    </li>
+                    <li>
+                        The bug you are looking for doesn't exist in the most
+                        obvious place this input is shown
+                    </li>
+                </ul>
+            </section>
+            <section class="left-side">
+                <p>
+                    <strong>
+                        Title:
+                    </strong>
+                    Stored / Reflected XSS in input field
+                </p>
+                <ul>
+                    <li>
+                        Attack Vector: Network
+                    </li>
+                    <li>
+                        Attack Complexity: Low
+                    </li>
+                    <li>
+                        Privileges Required: None
+                    </li>
+                    <li>
+                        User Interaction: Required
+                    </li>
+                    <li>
+                        Scope: Unchanged
+                    </li>
+                    <li>
+                        Confidentiality: High
+                    </li>
+                    <li>
+                        Integrity: High
+                    </li>
+                    <li>
+                        Availablility: None
+                    </li>
+                </ul>
+            </section>
+        </div>
+        <h2>
+            Reproduction Steps:
+        </h2>
+        <ol>
+            <li>
+                Navigate to create page
+            </li>
+            <li>
+                Pass the &lt;li into the title filed
+            </li>
+            <li>
+                Pass any words in the body field
+            </li>
+            <li>
+                Hit submit and navigate to Go Home
+            </li>
+            <li>
+                Alert box apears with flag revealed
+            </li>
+        </ol>
+        <h2>
+            Impact Statement:
+        </h2>
+        <p>
+            The injected script is permanently stored on the server
+            (e.g., in a title field). When other users
+            view the affected page, the script is executed in their
+            browsers. This could be used to steal session tokens,
+            impersonate users, or launch further client-side attacks.
+        </p>
+        <a href="#nav">Go to top</a>
+        <hr>
+        <h2>
+            Flag 3:
+        </h2>
+        <div class="sides">
+            <section class="right-side" id="flag3">
+                <p>Hints</p>
+                <ul>
+                    <li>
+                        Script tags are great, but what other options do you have?
+                    </li>
+                </ul>
+            </section>
+            <section class="left-side">
+                <p>
+                    <strong>
+                        Title:
+                    </strong>
+                    DOM-based XSS or HTML Injection
+                </p>
+                <ul>
+                    <li>
+                        Attack Vector: Network
+                    </li>
+                    <li>
+                        Attack Complexity: Low
+                    </li>
+                    <li>
+                        Privileges Required: None
+                    </li>
+                    <li>
+                        User Interaction: Required
+                    </li>
+                    <li>
+                        Scope: Unchanged
+                    </li>
+                    <li>
+                        Confidentiality: High
+                    </li>
+                    <li>
+                        Integrity: High
+                    </li>
+                    <li>
+                        Availablility: None
+                    </li>
+                </ul>
+            </section>
+        </div>
+        <h2>
+            Reproduction Steps:
+        </h2>
+        <ol>
+            <li>
+                Navigate to Markdown Test
+            </li>
+            <li>
+                Navigate to Edit this page
+            </li>
+            <li>
+                Inside the &lt;button element add onCLick={alert()} and hit save
+            </li>
+            <li>
+                Open the developer tool and inspect the button
+            </li>
+            <li>
+                The flag is revealed inside the button attr called flag
+            </li>
+        </ol>
+        <h2>
+            Impact Statement:
+        </h2>
+        <p>
+            By modifying the attributes or JavaScript methods
+            associated with a button element (e.g., onclick),
+            an attacker can perform unauthorized actions or
+            bypass intended restrictions on the client side. If
+            the application does not enforce proper authorization
+            checks server-side, this could lead to data exposure,
+            privilege escalation, or account compromise.
+        </p>
+        <a href="#nav">Go to top</a>
+        <hr>
+    </body>
+</html>
