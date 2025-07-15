@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Postbook">
+        <title>Postbook</title>
+        <link rel="stylesheet" href="/styles/hacker101.css">
+    </head>
+    <body>
+        <header class="ha-header">
+            <nav class="sides">
+                <p>Difficulty: Easy</p>
+                <h1 class="ha-center">
+                    Postbook
+                </h1>
+                <p>
+                    <a class="right-side" href="./">
+                        &lt; Go to previous page
+                    </a>
+                </p>
+            </nav>
+            <nav id="nav" class="nav-line">
+                <a href="#flag0">Flag 0</a>
+                <a href="#flag1">Flag 1</a>
+                <a href="#flag2">Flag 2</a>
+                <a href="#flag3">Flag 3</a>
+                <a href="#flag4">Flag 4</a>
+                <a href="#flag5">Flag 5</a>
+                <a href="#flag6">Flag 6</a>
+            </nav>
+            <hr>
+        </header>
+        <h2>
+            Flag 0:
+        </h2>
+        <div class="sides">
+            <section class="right-side" id="flag0">
+                <p>Hints</p>
+                <ul>
+                    <li>
+                        The person with username "user" has a very easy password...
+                    </li>
+                </ul>
+            </section>
+            <section class="left-side">
+                <p>
+                    <strong>
+                        Title:
+                    </strong>
+                    Use of weak or predictable password
+                </p>
+                <ul>
+                    <li>
+                        Attack Vector: Network
+                    </li>
+                    <li>
+                        Attack Complexity: Low
+                    </li>
+                    <li>
+                        Privileges Required: None
+                    </li>
+                    <li>
+                        User Interaction: Required
+                    </li>
+                    <li>
+                        Scope: Unchanged
+                    </li>
+                    <li>
+                        Confidentiality: High
+                    </li>
+                    <li>
+                        Integrity: High
+                    </li>
+                    <li>
+                        Availablility: None
+                    </li>
+                </ul>
+            </section>
+        </div>
+        <h2>
+            Reproduction Steps:
+        </h2>
+        <ol>
+            <li>
+                Intercept the HTTP traffic using any tools while browsing the
+                application.
+            </li>
+            <li>
+                As the hint says the user has easy password.
+            </li>
+            <li>
+                Use the brute force method to login to the website with the username user.
+            </li>
+            <li>
+                After certain attempts and time it will reveal the password.
+            </li>
+            <li>
+                Login with the username user and revealed password the page will respond with
+                the flag.
+            </li>
+        </ol>
+        <h2>
+            Impact Statement:
+        </h2>
+        <p>
+            An attacker could gain unauthorized access by guessing default or weak passwords,
+            compromising the confidentiality and integrity of sensitive systems or data.
+        </p>
+        <a href="#nav">Go to top</a>
+        <hr>
+        <h2>
+            Flag 1:
+        </h2>
+        <div class="sides">
+            <section class="right-side" id="flag1">
+                <p>Hints</p>
+                <ul>
+                    <li>
+                        Try viewing your own post and then see if you can change the ID
+                    </li>
+                </ul>
+            </section>
+            <section class="left-side">
+                <p>
+                    <strong>
+                        Title:
+                    </strong>
+                    Access of the sensitive data. 
+                </p>
+                <ul>
+                    <li>
+                        Attack Vector: Network
+                    </li>
+                    <li>
+                        Attack Complexity: Low
+                    </li>
+                    <li>
+                        Privileges Required: None
+                    </li>
+                    <li>
+                        User Interaction: Required
+                    </li>
+                    <li>
+                        Scope: Unchanged
+                    </li>
+                    <li>
+                        Confidentiality: High
+                    </li>
+                    <li>
+                        Integrity: High
+                    </li>
+                    <li>
+                        Availablility: None
+                    </li>
+                </ul>
+            </section>
+        </div>
+        <h2>
+            Reproduction Steps:
+        </h2>
+        <ol>
+            <li>
+                Login to the website.
+            </li>
+            <li>
+                Go to the url and replace the value of id with different numbers.
+            </li>
+            <li>
+                It will reveal the flag for the sensitive data.
+            </li>
+        </ol>
+        <h2>
+            Impact Statement:
+        </h2>
+        <p>
+            The ability to access internal files via a GET request exposes
+            sensitive content to unauthorized users. In this case, retrieving
+            the flag demonstrates a file exposure vulnerability that compromises
+            the confidentiality of the system.
+        </p>
+        <p>
+            Additionally, because the file was not meant to be publicly accessible,
+            this weakens the integrity of the application's access control model
+            and may allow attackers to enumerate or retrieve additional internal files.
+        </p>
+        <a href="#nav">Go to top</a>
+        <hr>
+        <h2>
+            Flag 3:
+        </h2>
+        <div class="sides">
+            <section class="right-side" id="flag2">
+                <p>Hints</p>
+                <ul>
+                    <li>
+                        You should definitely use "Inspect Element" on the form when
+                        creating a new post
+                    </li>
+                </ul>
+            </section>
+            <section class="left-side">
+                <p>
+                    <strong>
+                        Title:
+                    </strong>
+                    Can modify the value of user id in the hidden input field.
+                </p>
+                <ul>
+                    <li>
+                        Attack Vector: Network
+                    </li>
+                    <li>
+                        Attack Complexity: Low
+                    </li>
+                    <li>
+                        Privileges Required: None
+                    </li>
+                    <li>
+                        User Interaction: Required
+                    </li>
+                    <li>
+                        Scope: Unchanged
+                    </li>
+                    <li>
+                        Confidentiality: Low
+                    </li>
+                    <li>
+                        Integrity: High
+                    </li>
+                    <li>
+                        Availablility: None
+                    </li>
+                </ul>
+            </section>
+        </div>
+        <h2>
+            Reproduction Steps:
+        </h2>
+        <ol>
+            <li>
+                Login into the website.
+            </li>
+            <li>
+                Navigate to Create new post and inspect the elements.
+            </li>
+            <li>
+                After inspecting all elements we can find a hidden input element
+                with name "user_id" and value of number.
+            </li>
+            <li>
+                Modifying the value to different number and clicking "Create post" will
+                response with flag. 
+            </li>
+        </ol>
+        <h2>
+            Impact Statement:
+        </h2>
+        <p>
+            The user id is exposed and by replacing the id's with different numbers we can add posts
+            to different users.
+        </p>
+        <a href="#nav">Go to top</a>
+        <hr>
+        <h2>
+            Flag 3:
+        </h2>
+        <div class="sides">
+            <section class="right-side" id="flag3">
+                <p>Hints</p>
+                <ul>
+                    <li>
+                        189 * 5
+                    </li>
+                </ul>
+            </section>
+            <section class="left-side">
+                <p>
+                    <strong>
+                        Title:
+                    </strong>
+                    Can view the hidden post by passing the id's.
+                </p>
+                <ul>
+                    <li>
+                        Attack Vector: Network
+                    </li>
+                    <li>
+                        Attack Complexity: Low
+                    </li>
+                    <li>
+                        Privileges Required: None
+                    </li>
+                    <li>
+                        User Interaction: Required
+                    </li>
+                    <li>
+                        Scope: Unchanged
+                    </li>
+                    <li>
+                        Confidentiality: High
+                    </li>
+                    <li>
+                        Integrity: High
+                    </li>
+                    <li>
+                        Availablility: None
+                    </li>
+                </ul>
+            </section>
+        </div>
+        <h2>
+            Reproduction Steps:
+        </h2>
+        <ol>
+            <li>
+                Login to the website.
+            </li>
+            <li>
+                Navigate to Home page.
+            </li>
+            <li>
+                Click view in any post.
+            </li>
+            <li>
+                Inspect the url in the url bar and replace the value of id with different ids.
+            </li>
+            <li>
+                The page will response with the flag.
+            </li>
+        </ol>
+        <h2>
+            Impact Statement:
+        </h2>
+        <p>
+            By modifying the url and replacing the value of the ids sensitive information
+            can be revealed.
+        </p>
+        <a href="#nav">Go to top</a>
+        <hr>
+        <h2>
+            Flag 4:
+        </h2>
+        <div class="sides">
+            <section class="right-side" id="flag4">
+                <p>Hints</p>
+                <ul>
+                    <li>
+                        You can edit your own posts, what about someone else's?
+                    </li>
+                </ul>
+            </section>
+            <section class="left-side">
+                <p>
+                    <strong>
+                        Title:
+                    </strong>
+                    Can edit other's post by passing correct ids.
+                </p>
+                <ul>
+                    <li>
+                        Attack Vector: Network
+                    </li>
+                    <li>
+                        Attack Complexity: Low
+                    </li>
+                    <li>
+                        Privileges Required: None
+                    </li>
+                    <li>
+                        User Interaction: Required
+                    </li>
+                    <li>
+                        Scope: Unchanged
+                    </li>
+                    <li>
+                        Confidentiality: High
+                    </li>
+                    <li>
+                        Integrity: High
+                    </li>
+                    <li>
+                        Availablility: None
+                    </li>
+                </ul>
+            </section>
+        </div>
+        <h2>
+            Reproduction Steps:
+        </h2>
+        <ol>
+            <li>
+                Login to the website.
+            </li>
+            <li>
+                View the posts in the home and click the edit link.
+            </li>
+            <li>
+                Now check the url and replace the value of the id with the post
+                that is not under the name of current user.
+            </li>
+            <li>
+                Click the save and response is with the flag.
+            </li>
+        </ol>
+        <h2>
+            Impact Statement:
+        </h2>
+        <p>
+            The ability to access internal files via a GET request exposes
+            sensitive content to unauthorized users. In this case, retrieving
+            the flag demonstrates a file exposure vulnerability that compromises
+            the confidentiality of the system.
+        </p>
+        <p>
+            Additionally, because the file was not meant to be publicly accessible,
+            this weakens the integrity of the application's access control model
+            and may allow attackers to enumerate or retrieve additional internal files.
+        </p>
+        <a href="#nav">Go to top</a>
+        <hr>
+        <h2>
+            Flag 5:
+        </h2>
+        <div class="sides">
+            <section class="right-side" id="flag5">
+                <p>Hints</p>
+                <ul>
+                    <li>
+                        The cookie allows you to stay signed in. Can you figure out how
+                        they work so you can sign in to user with ID 1?
+                    </li>
+                </ul>
+            </section>
+            <section class="left-side">
+                <p>
+                    <strong>
+                        Title:
+                    </strong>
+                    Manuplating the cookie id allows you to login with other users.
+                </p>
+                <ul>
+                    <li>
+                        Attack Vector: Network
+                    </li>
+                    <li>
+                        Attack Complexity: Low
+                    </li>
+                    <li>
+                        Privileges Required: None
+                    </li>
+                    <li>
+                        User Interaction: Required
+                    </li>
+                    <li>
+                        Scope: Unchanged
+                    </li>
+                    <li>
+                        Confidentiality: High
+                    </li>
+                    <li>
+                        Integrity: High
+                    </li>
+                    <li>
+                        Availablility: None
+                    </li>
+                </ul>
+            </section>
+        </div>
+        <h2>
+            Reproduction Steps:
+        </h2>
+        <ol>
+            <li>
+                Login to the app.
+            </li>
+            <li>
+                After login inspect the cookie id and the id is encoded with the
+                MD5 hash.
+            </li>
+            <li>
+                Encrypt the id 1 with MD5 hash.
+            </li>
+            <li>
+                Replace the cookie id value with the new MD5 hash and refresh.
+            </li>
+            <li>
+                The app responds with flag and it's loged in with the user id with 1.
+            </li>
+        </ol>
+        <h2>
+            Impact Statement:
+        </h2>
+        <p>
+            Manuplation of the cookie id give access to privillaged users and the confidentiality
+            and integrity of the documents could be alter by the attacker.
+        </p>
+        <a href="#nav">Go to top</a>
+        <hr>
+        <h2>
+            Flag 6:
+        </h2>
+        <div class="sides">
+            <section class="right-side" id="flag6">
+                <p>Hints</p>
+                <ul>
+                    <li>
+                        Deleting a post seems to take an ID that
+                        is not a number. Can you figure out what it is?
+                    </li>
+                </ul>
+            </section>
+            <section class="left-side">
+                <p>
+                    <strong>
+                        Title:
+                    </strong>
+                    Can delete any post by replacing the id value with its encoded 
+                    MD5 hash value.
+                </p>
+                <ul>
+                    <li>
+                        Attack Vector: Network
+                    </li>
+                    <li>
+                        Attack Complexity: Low
+                    </li>
+                    <li>
+                        Privileges Required: None
+                    </li>
+                    <li>
+                        User Interaction: Required
+                    </li>
+                    <li>
+                        Scope: Unchanged
+                    </li>
+                    <li>
+                        Confidentiality: High
+                    </li>
+                    <li>
+                        Integrity: High
+                    </li>
+                    <li>
+                        Availablility: None
+                    </li>
+                </ul>
+            </section>
+        </div>
+        <h2>
+            Reproduction Steps:
+        </h2>
+        <ol>
+            <li>
+                Login to the account.
+            </li>
+            <li>
+                Check the value of the id the cannot be edited or deleted.
+            </li>
+            <li>
+                Encode that id into MD5 hash.
+            </li>
+            <li>
+                Inspect the element for delete link and replace the id with the
+                encoded MD5 hash and click the link.
+            </li>
+            <li>
+                The page response with the revealed flag.
+            </li>
+        </ol>
+        <h2>
+            Impact Statement:
+        </h2>
+        <p>
+            By replacing the value of id with correct MD5 hash allow any user to
+            delete anyone post which alters the confidentiality and integrity of
+            the data.
+        </p>
+        <a href="#nav">Go to top</a>
+        <hr>
+    </body>
+</html>

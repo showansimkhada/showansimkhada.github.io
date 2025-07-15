@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
+        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="descritption" content="Micro-CMS V1">
-        <title>Micro-CMS v1</title>
+        <meta name="description" content="petshop pro">
+        <title>Petshop Pro</title>
         <link rel="stylesheet" href="./styles.css">
     </head>
     <body>
-         <header class="ha-header">
+        <header class="ha-header">
             <nav class="sides">
                 <p>Difficulty: Easy</p>
                 <h1 class="ha-center">
-                    Micro-CMS v1
+                    Pestshop Pro
                 </h1>
                 <p>
                     <a class="right-side" href="./">
@@ -23,7 +24,6 @@
                 <a href="#flag0">Flag 0</a>
                 <a href="#flag1">Flag 1</a>
                 <a href="#flag2">Flag 2</a>
-                <a href="#flag3">flag3</a>
             </nav>
             <hr>
         </header>
@@ -35,19 +35,101 @@
                 <p>Hints</p>
                 <ul>
                     <li>
-                        Try creating a new page
+                        Something looks out of place with checkout
                     </li>
                     <li>
-                        How are pages indexed?
+                        It's always nice to get free stuff
+                    </li>
+                </ul>
+            </section>
+            <section class="left-side">
+                <p>
+                    <strong>
+                        Title:
+                    </strong>
+                    Can modify the content of the cart
+                </p>
+                <ul>
+                    <li>
+                        Attack Vector: Network
                     </li>
                     <li>
-                        Look at the sequence of IDs
+                        Attack Complexity: Low
                     </li>
                     <li>
-                        If the front door doesn't open, try the window
+                        Privileges Required: None
                     </li>
                     <li>
-                        In what ways can you retrieve page contents?
+                        User Interaction: Required
+                    </li>
+                    <li>
+                        Scope: Unchanged
+                    </li>
+                    <li>
+                        Confidentiality: High
+                    </li>
+                    <li>
+                        Integrity: High
+                    </li>
+                    <li>
+                        Availablility: None
+                    </li>
+                </ul>
+            </section>
+        </div>
+        <h2>
+            Reproduction Steps:
+        </h2>
+        <ol>
+            <li>
+                Intercept the HTTP traffic using Burp Suite while browsing the
+                application.
+            </li>
+            <li>
+                Go to proxy settings and under the proxy tab turn on both unauthorized
+                hidden form fields
+            </li>
+            <li>
+                And prominentlh nighlight unhidden fields
+            </li>
+            <li>
+                Add any item to cart
+            </li>
+            <li>
+                Navigate to items in cart
+            </li>
+            <li>
+                Change the price value to 0 and click the check out
+            </li>
+            <li>
+                The browser will response with the revealed flag.
+            </li>
+        </ol>
+        <h2>
+            Impact Statement:
+        </h2>
+        <p>
+            The ability to modify throug the array exposes sensitive content to 
+            unauthorized users. In this case, retrieving the flag demonstrates
+            a file exposure vulnerability that compromises the confidentiality of 
+            the system.
+        </p>
+        <hr>
+        <h2>
+            Flag 1:
+        </h2>
+        <div class="sides">
+            <section class="right-side" id="flag1">
+                <p>Hints</p>
+                <ul>
+                    <li>
+                        There must be a way to administer the app
+                    </li>
+                    <li>
+                        Tools may help you find the entrypoint
+                    </li>
+                    <li>
+                        Tools are also great for finding credentials
                     </li>
                 </ul>
             </section>
@@ -95,14 +177,15 @@
                 application.
             </li>
             <li>
-                Locate the GET request to /page/{id} where id numbers in the HTTP history.
+                Locate the GET request to /background.png in the HTTP history.
             </li>
             <li>
-                Try different different id where 4 needs autorisation
+                Reply the request directly in the browser.
             </li>
             <li>
-                When the parameter is modified as (e.g, /page/edit/4) and passed
-                in the URL the application responds with the flag.
+                When the specific parameter is passed in the URL
+                (e.g., /background.png), the application responds with the
+                flag.
             </li>
             <li>
                 No authentication or special privileges are required to access
@@ -123,29 +206,19 @@
             this weakens the integrity of the application's access control model
             and may allow attackers to enumerate or retrieve additional internal files.
         </p>
-        <a href="#nav">Go to top</a>
         <hr>
         <h2>
-            Flag 1:
+            Flag 2:
         </h2>
         <div class="sides">
-            <section class="right-side" id="flag1">
+            <section class="right-side" id="flag2">
                 <p>Hints</p>
                 <ul>
                     <li>
-                        Make sure you tamper with every input
+                        Always test every input
                     </li>
                     <li>
-                        Have you tested for the usual culprits? XSS, SQL injection,
-                        path injection
-                    </li>
-                    <li>
-                        Bugs often occur when an input should always be one type and
-                        turns out to be another
-                    </li>
-                    <li>
-                        Remember, form submissions aren't the only inputs that come
-                        from browsers
+                        Bugs don't always appear in a place where the data is entered
                     </li>
                 </ul>
             </section>
@@ -154,7 +227,7 @@
                     <strong>
                         Title:
                     </strong>
-                    Accepts character with ID
+                    Unauthorised access to internal file via direct GET request
                 </p>
                 <ul>
                     <li>
@@ -193,14 +266,14 @@
                 application.
             </li>
             <li>
-                Locate the GET request to /page/edit/1 in the HTTP history.
+                Locate the GET request to /background.png in the HTTP history.
             </li>
             <li>
                 Reply the request directly in the browser.
             </li>
             <li>
                 When the specific parameter is passed in the URL
-                (e.g., /page/edit/1'), the application responds with the
+                (e.g., /background.png), the application responds with the
                 flag.
             </li>
             <li>
@@ -222,171 +295,6 @@
             this weakens the integrity of the application's access control model
             and may allow attackers to enumerate or retrieve additional internal files.
         </p>
-        <a href="#nav">Go to top</a>
-        <hr>
-        <h2>
-            Flag 2:
-        </h2>
-        <div class="sides">
-            <section class="right-side" id="flag2">
-                <p>Hints</p>
-                <ul>
-                    <li>
-                        Sometimes a given input will affect more than one page
-                    </li>
-                    <li>
-                        The bug you are looking for doesn't exist in the most
-                        obvious place this input is shown
-                    </li>
-                </ul>
-            </section>
-            <section class="left-side">
-                <p>
-                    <strong>
-                        Title:
-                    </strong>
-                    Stored / Reflected XSS in input field
-                </p>
-                <ul>
-                    <li>
-                        Attack Vector: Network
-                    </li>
-                    <li>
-                        Attack Complexity: Low
-                    </li>
-                    <li>
-                        Privileges Required: None
-                    </li>
-                    <li>
-                        User Interaction: Required
-                    </li>
-                    <li>
-                        Scope: Unchanged
-                    </li>
-                    <li>
-                        Confidentiality: High
-                    </li>
-                    <li>
-                        Integrity: High
-                    </li>
-                    <li>
-                        Availablility: None
-                    </li>
-                </ul>
-            </section>
-        </div>
-        <h2>
-            Reproduction Steps:
-        </h2>
-        <ol>
-            <li>
-                Navigate to create page
-            </li>
-            <li>
-                Pass the &lt;li into the title filed
-            </li>
-            <li>
-                Pass any words in the body field
-            </li>
-            <li>
-                Hit submit and navigate to Go Home
-            </li>
-            <li>
-                Alert box apears with flag revealed
-            </li>
-        </ol>
-        <h2>
-            Impact Statement:
-        </h2>
-        <p>
-            The injected script is permanently stored on the server
-            (e.g., in a title field). When other users
-            view the affected page, the script is executed in their
-            browsers. This could be used to steal session tokens,
-            impersonate users, or launch further client-side attacks.
-        </p>
-        <a href="#nav">Go to top</a>
-        <hr>
-        <h2>
-            Flag 3:
-        </h2>
-        <div class="sides">
-            <section class="right-side" id="flag3">
-                <p>Hints</p>
-                <ul>
-                    <li>
-                        Script tags are great, but what other options do you have?
-                    </li>
-                </ul>
-            </section>
-            <section class="left-side">
-                <p>
-                    <strong>
-                        Title:
-                    </strong>
-                    DOM-based XSS or HTML Injection
-                </p>
-                <ul>
-                    <li>
-                        Attack Vector: Network
-                    </li>
-                    <li>
-                        Attack Complexity: Low
-                    </li>
-                    <li>
-                        Privileges Required: None
-                    </li>
-                    <li>
-                        User Interaction: Required
-                    </li>
-                    <li>
-                        Scope: Unchanged
-                    </li>
-                    <li>
-                        Confidentiality: High
-                    </li>
-                    <li>
-                        Integrity: High
-                    </li>
-                    <li>
-                        Availablility: None
-                    </li>
-                </ul>
-            </section>
-        </div>
-        <h2>
-            Reproduction Steps:
-        </h2>
-        <ol>
-            <li>
-                Navigate to Markdown Test
-            </li>
-            <li>
-                Navigate to Edit this page
-            </li>
-            <li>
-                Inside the &lt;button element add onCLick={alert()} and hit save
-            </li>
-            <li>
-                Open the developer tool and inspect the button
-            </li>
-            <li>
-                The flag is revealed inside the button attr called flag
-            </li>
-        </ol>
-        <h2>
-            Impact Statement:
-        </h2>
-        <p>
-            By modifying the attributes or JavaScript methods
-            associated with a button element (e.g., onclick),
-            an attacker can perform unauthorized actions or
-            bypass intended restrictions on the client side. If
-            the application does not enforce proper authorization
-            checks server-side, this could lead to data exposure,
-            privilege escalation, or account compromise.
-        </p>
-        <a href="#nav">Go to top</a>
         <hr>
     </body>
 </html>
