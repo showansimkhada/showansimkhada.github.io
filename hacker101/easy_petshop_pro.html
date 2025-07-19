@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="petshop pro">
         <title>Petshop Pro</title>
-        <link rel="stylesheet" href="./styles.css">
+        <link rel="stylesheet" href="/styles/hacker101.css">
     </head>
     <body>
         <header class="ha-header">
@@ -138,7 +138,7 @@
                     <strong>
                         Title:
                     </strong>
-                    Unauthorised access to internal file via direct GET request
+                    Weak credentials used
                 </p>
                 <ul>
                     <li>
@@ -173,38 +173,30 @@
         </h2>
         <ol>
             <li>
-                Intercept the HTTP traffic using Burp Suite while browsing the
-                application.
+                Find the page to login.
             </li>
             <li>
-                Locate the GET request to /background.png in the HTTP history.
+                First try to login with list of username using tools.
             </li>
             <li>
-                Reply the request directly in the browser.
+                Look for the response with invalid password.
             </li>
             <li>
-                When the specific parameter is passed in the URL
-                (e.g., /background.png), the application responds with the
-                flag.
+                Once the user is found user the brute force method to find the password.
             </li>
             <li>
-                No authentication or special privileges are required to access
-                the content.
+                Look for response without the username.
+            </li>
+            <li>
+                Login to the account using the credentials and falg will be revealed.
             </li>
         </ol>
         <h2>
             Impact Statement:
         </h2>
         <p>
-            The ability to access internal files via a GET request exposes
-            sensitive content to unauthorized users. In this case, retrieving
-            the flag demonstrates a file exposure vulnerability that compromises
-            the confidentiality of the system.
-        </p>
-        <p>
-            Additionally, because the file was not meant to be publicly accessible,
-            this weakens the integrity of the application's access control model
-            and may allow attackers to enumerate or retrieve additional internal files.
+            The use of weak credentials allow attacker to login and leak the confidential
+            data and raise conserns for the integrity.
         </p>
         <hr>
         <h2>
@@ -227,7 +219,7 @@
                     <strong>
                         Title:
                     </strong>
-                    Unauthorised access to internal file via direct GET request
+                    Stored XSS
                 </p>
                 <ul>
                     <li>
@@ -262,38 +254,29 @@
         </h2>
         <ol>
             <li>
-                Intercept the HTTP traffic using Burp Suite while browsing the
-                application.
+                Login using the credentials
             </li>
             <li>
-                Locate the GET request to /background.png in the HTTP history.
+                Edit any items and change the name of the description with
+                &gt;input value="button" onClick={alert()}&lt;.
             </li>
             <li>
-                Reply the request directly in the browser.
+                Click save.
             </li>
             <li>
-                When the specific parameter is passed in the URL
-                (e.g., /background.png), the application responds with the
-                flag.
+                Add that item to the cart and click the checkout button.
             </li>
             <li>
-                No authentication or special privileges are required to access
-                the content.
+                The page will respond with the flag revealed.
             </li>
         </ol>
         <h2>
             Impact Statement:
         </h2>
         <p>
-            The ability to access internal files via a GET request exposes
-            sensitive content to unauthorized users. In this case, retrieving
-            the flag demonstrates a file exposure vulnerability that compromises
-            the confidentiality of the system.
-        </p>
-        <p>
-            Additionally, because the file was not meant to be publicly accessible,
-            this weakens the integrity of the application's access control model
-            and may allow attackers to enumerate or retrieve additional internal files.
+            Stored XSS helps the attackar to gain the control of the computer
+            and may leak the confidential information or alter the files with
+            affect the integrity.
         </p>
         <hr>
     </body>
