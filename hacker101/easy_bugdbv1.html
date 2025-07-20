@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="bugdb v1">
+        <title>BugDB V1</title>
+        <link rel="stylesheet" href="/styles/hacker101.css">
+    </head>
+    <body>
+        <header class="ha-header">
+            <nav class="sides">
+                <p>Difficulty: Easy</p>
+                <h1 class="ha-center">
+                    BugDB v1
+                </h1>
+                <p>
+                    <a class="right-side" href="./">
+                        &lt; Go to previous page
+                    </a>
+                </p>
+            </nav>
+            <hr>
+        </header>
+        <h2>
+            Flag 0:
+        </h2>
+        <div class="sides">
+            <section class="right-side" id="flag0">
+                <p>Hints</p>
+                <ul>
+                    <li>
+                        What can you see? What can you not see?
+                    </li>
+                    <li>
+                        What can you see? What can you not see?
+                    </li>
+                    <li>
+                        Have you tried querying different endpoints?
+                    </li>
+                </ul>
+            </section>
+            <section class="left-side">
+                <p>
+                    <strong>
+                        Title:
+                    </strong>
+                    Can reveal the data through query
+                </p>
+                <ul>
+                    <li>
+                        Attack Vector: Network
+                    </li>
+                    <li>
+                        Attack Complexity: Low
+                    </li>
+                    <li>
+                        Privileges Required: None
+                    </li>
+                    <li>
+                        User Interaction: Required
+                    </li>
+                    <li>
+                        Scope: Unchanged
+                    </li>
+                    <li>
+                        Confidentiality: High
+                    </li>
+                    <li>
+                        Integrity: High
+                    </li>
+                    <li>
+                        Availablility: None
+                    </li>
+                </ul>
+            </section>
+        </div>
+        <h2>
+            Reproduction Steps:
+        </h2>
+        <ol>
+            <li>
+                Look through every data base.
+            </li>
+            <li>
+                The fild hold value for the flag.
+            </li>
+        </ol>
+        <h2>
+            Impact Statement:
+        </h2>
+        <p>
+            The ability to get the value from the field will reveal
+            the sensitive data which affect the integrity.
+        </p>
+        <hr>
+    </body>
+</html>
