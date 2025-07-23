@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="descritption" content="Micro-CMS V2">
+        <title>Micro-CMS v2</title>
+        <link rel="stylesheet" href="/styles/hacker101.css">
+    </head>
+    <body>
+        <header class="ha-header">
+            <nav class="sides">
+                <p>Difficulty: Moderate</p>
+                <h1 class="ha-center">
+                    Micro-CMS v2
+                </h1>
+                <p>
+                    <a class="right-side" href="./">
+                        &lt; Go to previous page
+                    </a>
+                </p>
+            </nav>
+            <nav id="nav" class="nav-line">
+                <a href="#flag0">Flag 0</a>
+                <a href="#flag1">Flag 1</a>
+                <a href="#flag2">Flag 2</a>
+            </nav>
+            <hr>
+        </header>
+        <h2>
+            Flag 0:
+        </h2>
+        <div class="sides">
+            <section class="right-side" id="flag0">
+                <p>Hints</p>
+                <ul>
+                    <li>
+                        Regular users can only see public pages
+                    </li>
+                    <li>
+                        Getting admin access might require a more perfect union
+                    </li>
+                    <li>
+                        Knowing the password is cool, but there are other approaches that might be easier
+                    </li>
+                </ul>
+            </section>
+            <section class="left-side">
+                <p>
+                    <strong>
+                        Title:
+                    </strong>
+                    SQL injection
+                </p>
+                <ul>
+                    <li>
+                        Attack Vector: Network
+                    </li>
+                    <li>
+                        Attack Complexity: Low
+                    </li>
+                    <li>
+                        Privileges Required: None
+                    </li>
+                    <li>
+                        User Interaction: Required
+                    </li>
+                    <li>
+                        Scope: Unchanged
+                    </li>
+                    <li>
+                        Confidentiality: High
+                    </li>
+                    <li>
+                        Integrity: High
+                    </li>
+                    <li>
+                        Availablility: None
+                    </li>
+                </ul>
+            </section>
+        </div>
+        <h2>
+            Reproduction Steps:
+        </h2>
+        <ol>
+            <li>
+                Cna inject SQL query and gain access to the page.
+            </li>
+            <li>
+                Pass the query into the username field ' UNION SELECT '' as password FROM admins WHERE '1' = '1
+            </li>
+            <li>
+                You will be loged in and navigate to the Private Page
+            </li>
+            <li>
+                The page will respose with the flag.
+            </li>
+        </ol>
+        <h2>
+            Impact Statement:
+        </h2>
+        <p>
+            SQL injection will definetely give an upper hand to the attacker to get
+            access as administrator and might alter the data or leak the sensitive
+            data which will affect the confidentiality and integrity of the data.
+        </p>
+        <a href="#nav">Go to top</a>
+        <hr>
+        <h2>
+            Flag 1:
+        </h2>
+        <div class="sides">
+            <section class="right-side" id="flag1">
+                <p>Hints</p>
+                <ul>
+                    <li>
+                        What actions could you perform as a regular user on the last level, which you can't now?
+                    </li>
+                    <li>
+                        Just because request fails with one method doesn't mean it will fail with a different method
+                    </li>
+                    <li>
+                        Different requests often have different required authorisation
+                    </li>
+                </ul>
+            </section>
+            <section class="left-side">
+                <p>
+                    <strong>
+                        Title:
+                    </strong>
+                    Acess to the page using different actions
+                </p>
+                <ul>
+                    <li>
+                        Attack Vector: Network
+                    </li>
+                    <li>
+                        Attack Complexity: Low
+                    </li>
+                    <li>
+                        Privileges Required: None
+                    </li>
+                    <li>
+                        User Interaction: Required
+                    </li>
+                    <li>
+                        Scope: Unchanged
+                    </li>
+                    <li>
+                        Confidentiality: High
+                    </li>
+                    <li>
+                        Integrity: High
+                    </li>
+                    <li>
+                        Availablility: None
+                    </li>
+                </ul>
+            </section>
+        </div>
+        <h2>
+            Reproduction Steps:
+        </h2>
+        <ol>
+            <li>
+                Using burpsuite or zaproxy send request by using method POST
+            </li>
+            <li>
+                Add parameter as /page/edit/1
+            </li>
+            <li>
+                The body will response with the flag revealed.
+            </li>
+        </ol>
+        <h2>
+            Impact Statement:
+        </h2>
+        <p>
+            The ability to access internal files via a POST request exposes
+            sensitive content to unauthorized users. In this case, retrieving
+            the flag demonstrates a file exposure vulnerability that compromises
+            the confidentiality of the system.
+        </p>
+        <a href="#nav">Go to top</a>
+        <hr>
+        <h2>
+            Flag 2:
+        </h2>
+        <div class="sides">
+            <section class="right-side" id="flag2">
+                <p>Hints</p>
+                <ul>
+                    <li>
+                        Credentials are secret, flags are secret. Coincidence?
+                    </li>
+                </ul>
+            </section>
+            <section class="left-side">
+                <p>
+                    <strong>
+                        Title:
+                    </strong>
+                    Weak credentials used
+                </p>
+                <ul>
+                    <li>
+                        Attack Vector: Network
+                    </li>
+                    <li>
+                        Attack Complexity: Low
+                    </li>
+                    <li>
+                        Privileges Required: None
+                    </li>
+                    <li>
+                        User Interaction: Required
+                    </li>
+                    <li>
+                        Scope: Unchanged
+                    </li>
+                    <li>
+                        Confidentiality: High
+                    </li>
+                    <li>
+                        Integrity: High
+                    </li>
+                    <li>
+                        Availablility: None
+                    </li>
+                </ul>
+            </section>
+        </div>
+        <h2>
+            Reproduction Steps:
+        </h2>
+        <ol>
+            <li>
+                When try to login with only one field username if it is
+                not found it says incorrect username.
+            </li>
+            <li>
+                Is correct username is found it says incorrect password is
+                used.
+            </li>
+            <li>
+                Brute-force the found username with the list of password.
+            </li>
+            <li>
+                Login to the account and flag will be revealed.
+            </li>
+        </ol>
+        <h2>
+            Impact Statement:
+        </h2>
+        <p>
+            Use of weak credentials provoke the attacker to gain the access
+            using the brute-force method.
+        </p>
+        <a href="#nav">Go to top</a>
+        <hr>
+    </body>
+</html>
