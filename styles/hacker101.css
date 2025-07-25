@@ -1,0 +1,46 @@
+body {
+    margin: -20px 0 0 0;
+    background-color: bisque;
+}
+
+header {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    margin-top: 100px;
+}
+
+.navbar {
+    width: 100%;
+    padding: 0 5px 5px 5px;
+    position: fixed;
+    background-color: aqua;
+}
+
+.ha-center {
+    text-align: center;
+}
+
+.nav-line {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.sides {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+.left-side {
+    display: flex;
+    flex-direction: column;
+}
+
+.right-side {
+    display: flex;
+    flex-direction: column;
+}

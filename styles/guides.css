@@ -1,0 +1,29 @@
+body {
+    margin: 2% 4% 2% 4%;
+    background-color: darkcyan;
+}
+
+header {
+    background-color: azure;
+    padding: 0 2% 0 2%;
+    margin: 0% 5% 0% 5%;
+    color: blue;
+}
+
+h1 {
+    text-align: center;
+    color: lightcoral;
+}
+
+h2 {
+    text-align: center;
+    color: lightgreen;
+}
+
+a {
+    color: lightgreen;
+}
+
+p {
+    align-self: center;
+}
