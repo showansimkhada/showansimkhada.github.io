@@ -1,0 +1,373 @@
+<!Doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta content="description" content="install kali linux in T2 MacBookPro without external keyboard, mouse, and removalble drive"/>
+        <title>Kali Linux Install Guide</title>
+        <link href="./styles.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <header>
+            <div class="left-side">
+                <h1>Kali Linux in macBookPro with T2 chip</h1>
+                <p>In this process we do not require external keyboard & mouse and removalble drives.</p>
+                <p>I have followed steps from this link <a href="https://wiki.t2linux.org/distributions/debian/installation/" target="_blank">Wiki T2 Linux</a></p>
+                <nav>
+                    <caption>Table of Contents</caption>
+                    <ul>
+                        <li>
+                            <a href="">Prepare your device for installation</a>
+                        </li>
+                        <li>
+                            <a href="">Run the VM and boot the live system to format the partitions</a>
+                        </li>
+                        <li>
+                            <a href="">Start the installer</a>
+                        </li>
+                        <li>
+                            <a href="">Start the Kali Live System</a>
+                        </li>
+                        <li>
+                            <a href="">Exit the VM and reboot your MacBookPro</a>
+                        </li>
+                        <li>
+                            <a href="">Install the driver and add Kernel for T2</a>
+                        </li>
+                        <li>
+                            <a href="">Edit the fstab</a>
+                        </li>
+                        <li>
+                            <a href="">Folder structure of the /boot/ directory</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <section id="gu-prep">
+            <!-- Get WIFI and Bluetooth Drivers-->
+            <!-- Download Kali ISO file-->
+            <!-- Create partitions -->
+            <h2>Prepare your device for installation</h2>
+            <p>Follow the following steps to prepare your device for the installation.</p>
+            <ol>
+                <li>
+                    Download the Kali Live ISO from this link
+                    <a href="https://www.kali.org/get-kali/#kali-live" alt="link to download Kali ISO Live">
+                        Kali ISO Live
+                    </a>.
+                </li>
+                <li>
+                    Create the required partition for the system
+                    <ol>
+                        <li>
+                            Open Disk Utility
+                        </li>
+                        <li>
+                            Click on the partition
+                        </li>
+                        <li>
+                            Click + sign
+                        </li>
+                        <li>
+                            Click on Add Partition
+                        </li>
+                        <li>
+                            Add required number of partitions
+                        </li>
+                        <li>
+                            Root partition for the system minimum 20 GB.
+                        </li>
+                        <li>
+                            SWAP partition minimum 4 GB.
+                        </li>
+                        <li>
+                            Boot partition minimum 500 MB. This can be either macOS boot partition or seprate partition
+                        </li>
+                    </ol>
+                </li>
+                <li>
+                    Get the <a href="https://wiki.t2linux.org/guides/wifi-bluetooth/">bluetooth and WiFi firmware</a>.</a>
+                </li>
+                <li>
+                    Download the script file firmware.sh
+                </li>
+                <li>
+                    Open the terminal and run the following commands
+                    <pre>
+                        <code>
+                            bash
+                            chmod +x Download/firmware.sh
+                            Download/firmware.sh
+                            choose 1
+                        </code>
+                    </pre>
+                </li>
+                <li>
+                    Install the QEMU VM
+                    <ol>
+                        <li>
+                            Download the QEMU from this link
+                            <a href="https://www.qemu.org/download/" alt="link to download the QEMU VM"></a>
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+        </section>
+        <section id="gu-dw-pt">
+            <!-- Install QEMU VM -->
+            <!-- Boot into live Kali system -->
+            <!-- Format the file system of the partition to the required ones. -->
+            <h2>Run the VM and pass the partitions</h2>
+            <p>Run the following command in the macOS terminal using sudo</p>
+            <pre>
+                <code>
+                    sudo qemu-system-x86_64 \
+                    -accel hvf \
+                    -m 4G \
+                    -smp 4 \
+                    -boot d \
+                    -drive file=&lt;path-to-the-Kali-Live-ISO&gt;,media=cdrom \
+                    -drive file=&lt;partition-id&gt;,if=virtio,format=raw \
+                    -drive file=/usr/local/opt/qemu/share/qemu/edk2-x86_64-code.fd,if=pflash,readonly=on \
+                    -vga std
+                </code>
+            </pre>
+            <p>
+                Run the live system
+                <figure>
+                    <figcaption>Kali Linux Live Menu</figcaption>
+                    <img src="/src/kali_linux_live_menu.png" alt="kali linux live menu" width="600" height="400">
+                </figure>
+            </p>
+            <p>After running the live system</p>
+            <p>
+                Format the partitions
+                <ul>
+                    <li>
+                        To format the boot efi partition if seprate from the macOS
+                        <pre>
+                            <code>
+                                mkfs.fat -f /dev/&lt;name&gt;
+                            </code>
+                        </pre>
+                    </li>
+                    <li>
+                        To format the root system run the following command
+                        <pre>
+                            <code>
+                                mkfs.ext4 /dev/&lt;name&gt;
+                            </code></pre>
+                    </li>
+                    <li>
+                        To format the swap system run the command
+                        <pre>
+                            <code>
+                                mkswap /dev/&lt;name&gt;</code></pre>
+                            </code>
+                        </pre>
+                    </li>
+                </ul>
+            </p>
+            <figure>
+                <figcaption>Result after lsblk -f command</figcaption>
+                <img src="/src/cmd_lsblk.png" alt="result after lsblk" width="600" height="200">
+            </figure>
+            <p>
+                Restart the system
+            </p>
+        </section>
+        <section id="">
+            <!-- Start the installer -->
+            <!-- Select the correct partition for the correct mount systems. -->
+            <!-- After reboot select the Kali to boot -->
+            <!-- Insatll the WIFI and Blutooth firmwre from the partition. -->
+            <!-- Edit the fstab --> 
+            <h2>Start the installer</h2>
+            <figure>
+                <figcaption>Start Installer</figcaption>
+                <img src="/src/start_installer.png" alt="start installer from the menu" width="600" height="400">
+            </figure>
+            <p>
+                Choose your language
+            </p>
+            <p>
+                Choose your location
+            </p>
+            <p>
+                Configure your keyboard
+            </p>
+            <p>
+                It will load the configurations
+            </p>
+            <p>
+                Configure your network
+            </p>
+            <p>
+                Setup users and passwords
+            </p>
+            <p>
+                Select the clock
+            </p>
+            <p>
+                It will now load setup partitions this steps is crucial
+            </p>
+            <p>
+                Choose the manual from the menu
+                <figure>
+                    <figcaption>Select manual from the menu</figcaption>
+                    <img src="/src/manual_partition.png" alt="choose manual partition" width="400" height="300">
+                </figure>
+            </p>
+            <p>
+                Make the changes as shown in below figure
+            </p>
+            <p>
+                For each partition select each under the virtual disk &lt;number&gt;
+                then select Use as: from the menu and select the correct options for
+                EFI choose EFI system, for swap choose swap area and for the root system
+                select as ext4 journaling file system and choose the mount point as the root
+                file system
+            </p>
+            <p>
+                After completing the above steps then select finish partitioning and write changes
+                to disk
+            </p>
+            <p>
+                It will install the system to the disks
+            </p>
+            <p>
+                Reboot the system
+            </p>
+        </section>
+        <section id="">
+            <!-- Adding T2 support -->
+            <!-- Add all the required parameters for the kernel -->
+            <h2>Boot into live system again</h2>
+            <ul>
+                <li>
+                    Run the following commands
+                    <ul>
+                        <li>
+                            <pre>
+                                <code>
+                                    sudo su
+                                    mount /dev/&lt;root-partition&gt; /mnt
+                                    mount /dev/&lt;efi-partition&gt; /mnt/boot/efi
+                                    mount --bind /dev /mnt/dev
+                                    mount --bind /dev/pts /mnt/dev/pts
+                                    mount --bind /dev/proc /mnt/proc
+                                    mount --bind /sys /mnt/sys
+                                </code>
+                            </pre>
+                        </li>
+                        <li>
+                            Copy the required files to the efi system
+                            <pre>
+                                <code>
+                                    mkdir /mnt/boot/efi/EFI/BOOT
+                                    check the file system exists it should show three files
+                                    ls /usr/lib/live/mount/medium/EFI/boot
+                                    cp -r /usr/lib/live/mount/medium/EFI/boot/* /mnt/boot/efi/EFI/BOOT/
+                                    mv /mnt/boot/efi/EFI/BOOT/grubx64.efi /mnt/boot/efi/EFI/BOOT/bootx64.efi
+                                </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        <section id="">
+            <!-- Check the folder structures -->
+            <!-- Check all the required files are at /boot directory -->
+            <!-- Restart the macBookPro and hold option + R key -->
+            <h2>Add T2 support, kernel parameters and edit fstab</h2>
+            <p>
+                Add the t2-ubuntu-repo apt repo by following the instructions given 
+                <a href="https://github.com/AdityaGarg8/t2-ubuntu-repo?tab=readme-ov-file#apt-repository-for-t2-macs">here</a>.
+            </p>
+            <p>
+                <pre>
+                    <code>
+                        chroot /mnt
+                        ## edit hosts file and add kali after localhost
+                        vim /etc/hosts
+                        ## press i to insert and move the crusor to end of the localhost and add kali
+                        ## press esc and type :wq and press enter
+                    </code>
+                </pre>
+                <pre>
+                    <code>
+                        ## add t2 support
+                        curl -s --compressed "https://adityagarg8.github.io/t2-ubuntu-repo/KEY.gpg" | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/t2-ubuntu-repo.gpg >/dev/null
+                        curl -s --compressed -o /etc/apt/sources.list.d/t2.list "https://adityagarg8.github.io/t2-ubuntu-repo/t2.list"
+                        apt update
+                        CODENAME=testing
+                        echo "deb [signed-by=/etc/apt/trusted.gpg.d/t2-ubuntu-repo.gpg] https://github.com/AdityaGarg8/t2-ubuntu-repo/releases/download/${CODENAME} ./" | sudo tee -a /etc/apt/sources.list.d/t2.list
+                        apt update
+                    </code>
+                </pre>
+                <pre>
+                    <code>
+                        ## now instal the t2 kernels
+                        apt install linux-t2 -y
+                        ## add better audio
+                        git clone https://github.com/kekrby/t2-better-audio.git /tmp/t2-better-audio
+                        cd /tmp/t2-better-audio
+                        ./install.sh
+                        rm -r /tmp/t2-better-audio
+                    </code>
+                </pre>
+                <pre>
+                    <code>
+                        ## adding the necessay kernel paramaters
+                        vim /etc/default/grub
+                        ## add the following lines in GRUB_CMDLINE_LINUX="quite splash"
+                        ## intel_iommu=on iommu=pt pcie_ports=compat
+                    </code>
+                </pre>
+                <pre>
+                    <code>
+                        ## edit fstab
+                        ## check the list of the partition from the macos terminal
+                        diskutil list
+                        ## note the disk partition number related to the required partition
+                        ## replace the name with nvme0n1pX 
+                    </code>
+                </pre>
+                <pre>
+                    <code>
+                        update the initramfs-tools
+                        vim /etc/initramfs-tools/modules
+                        add the following
+                        snd
+                        snd_pcm
+                        apple-bce
+
+                        update-initramfs -u
+                        update-grub
+                        grub-mkconfig
+                    </code>
+                </pre>
+            </p>
+        </section>
+        <section id="">
+            <!-- Disable the security -->
+            <!-- Reboot and hold option key and boot into the Kali system -->
+            <h2>Reboot your MacBookPro and hold command + R to enter the macOS recovery mode</h2>
+            <p>From the title bar choose Utilities</p>
+            <p>Choose Startup Security Utility</p>
+            <p>Choose No Security for Secure Boot</p>
+            <p>Choose Allow booting from external or removable media</p>
+            <p>Restart</p>
+            <p>Hold option</p>
+            <p>Choose linux system</p>
+        </section>
+        <section id="">
+            <!-- Troubleshoot-->
+        </section>
+        <section id="">
+            <!-- Guides for package removal and installation especially for the Desktop environments -->
+        </section>
+    </body>
+</html>
