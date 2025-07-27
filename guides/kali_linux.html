@@ -262,16 +262,7 @@
                             </pre>
                         </li>
                         <li>
-                            Copy the required files to the efi system
-                            <pre>
-                                <code>
-                                    mkdir /mnt/boot/efi/EFI/BOOT
-                                    check the file system exists it should show three files
-                                    ls /usr/lib/live/mount/medium/EFI/boot
-                                    cp -r /usr/lib/live/mount/medium/EFI/boot/* /mnt/boot/efi/EFI/BOOT/
-                                    mv /mnt/boot/efi/EFI/BOOT/grubx64.efi /mnt/boot/efi/EFI/BOOT/bootx64.efi
-                                </code>
-                            </pre>
+                            
                         </li>
                     </ul>
                 </li>
@@ -347,6 +338,26 @@
                         update-initramfs -u
                         update-grub
                         grub-mkconfig
+                    </code>
+                </pre>
+                Copy the required files to the efi system
+                <pre>
+                    <code>
+                        mkdir /mnt/boot/efi/EFI/BOOT
+                        check the file system exists it should show three files
+                        ls /usr/lib/live/mount/medium/EFI/boot
+                        cp -r /usr/lib/live/mount/medium/EFI/boot/* /mnt/boot/efi/EFI/BOOT/
+                        mv /mnt/boot/efi/EFI/BOOT/grubx64.efi /mnt/boot/efi/EFI/BOOT/bootx64.efi
+                        mkdir /boot/efi/boot
+                        cp -r /boot/grub /boot/efi/boot/
+                        shutdown now
+                    </code>
+                </pre>
+                <pre>
+                    <code>
+                        ## macOS terminal
+                        sudo bless --folder /Volumes/EFI/EFI/BOOT/ --label "&lt;name&gt;"
+                        ## reboot the macOS
                     </code>
                 </pre>
             </p>
