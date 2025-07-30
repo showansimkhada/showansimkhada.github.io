@@ -1,29 +1,57 @@
-body {
-    margin: 2% 4% 2% 4%;
-    background-color: darkcyan;
+/* Small devices (portrait tablets and large phones, 600px and up) */
+* {
+    max-width: 900px;
+}
+@media only screen and (min-width: 600px) {
+    body {
+        padding: 0 5px 0 10px;
+        background-color: aquamarine;
+        margin: 0 20px 0 20px;
+        align-content: center;
+    }
+
+    code {
+        display: grid;
+        margin: 10px;
+        padding: 8px 5px 8px 15px;
+        border-radius: 10px;
+        background-color: black;
+        color: white;
+        width: 80%;
+        overflow: scroll;
+    }
+
+    span {
+        text-wrap: nowrap;
+    }
+
+    img {
+        display: inline-block;
+        margin: auto;
+        width: 35%;
+        height: 15%;
+    }
+
+    .sides {
+        display: flex;
+        flex-direction: row;
+        align-self: center;
+    }
+
+    .left-side {
+        display: flex;
+        align-items: center;
+    }
+
+    .right-side {
+        background-color: aquamarine;
+        display: flex;
+        flex-direction: column;
+        padding: 0 10px 0 10px;
+    }
+    
 }
 
-header {
-    background-color: azure;
-    padding: 0 2% 0 2%;
-    margin: 0% 5% 0% 5%;
-    color: blue;
-}
-
-h1 {
-    text-align: center;
-    color: lightcoral;
-}
-
-h2 {
-    text-align: center;
-    color: lightgreen;
-}
-
-a {
-    color: lightgreen;
-}
-
-p {
-    align-self: center;
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
 }
