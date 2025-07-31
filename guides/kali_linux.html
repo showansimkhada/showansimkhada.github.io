@@ -611,6 +611,18 @@
                             update-initramfs -u
                         </span>
                         <span>
+                            <p></p>
+                        </span>
+                        <span>
+                            mkdir /boot/efi/boot/grub
+                        </span>
+                        <span>
+                            cp -r /boot/grub/* /boot/efi/boot/grub/
+                        </span>
+                        <span>
+                            <p></p>
+                        </span>
+                        <span>
                             update-grub -o /boot/efi/boot/grub/grub.cfg
                         </span>
                         <span>
