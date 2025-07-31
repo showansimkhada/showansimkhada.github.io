@@ -53,7 +53,7 @@
                     Boot into Kali Linux
                 </li>
                 <li>
-                    Customise the appearance to look like macOS
+                    Optional configuration
                 </li>
             </ol>
         </header>
@@ -814,7 +814,22 @@
                             Swap the command and control keys
                             <code>
                                 <span>
+                                    # add file
+                                </span>
+                                <span>
+                                    vim ~/.xprofile
+                                </span>
+                                <span>
+                                    <p></p>
+                                </span>
+                                <span>
+                                    # add the following command line and save the file
+                                </span>
+                                <span>
                                     setxkbmap -option ctrl:swap_lwin_lctl,ctrl:swap_rwin_rctl
+                                </span>
+                                <span>
+                                    # reboot or logout is required
                                 </span>
                             </code>
                         </li>
@@ -832,15 +847,34 @@
                                         </li>
                                     </ul>
                                 </li>
+                                <figure>
+                                    <a href="/src/img/kali-linux/macOS_like_apperance.png">
+                                        <img src="/src/img/kali-linux/macOS_like_apperance.png"
+                                            alt="MacOS like appearance">
+                                    </a>
+                                </figure>
+                            </ul>
+                        </li>
+                        <li>
+                            Remove PulseAudio and switch to pipewire with rtkit
+                            <ul>
+                                <code>
+                                    <span>
+                                        sudo systemctl --user --now disable pulseaudio.service pulseaudio.socket
+                                    </span>
+                                    <span>
+                                        sudo apt install pipewire pipewire-alsa pipewire-pulse wireplumber
+                                    </span>
+                                    <span>
+                                        sudo systemctl --user enable --now pipewire pipewire-pulse wireplumber
+                                    </span>
+                                    <span>
+                                        # reboot required
+                                    </span>
+                                </code>
                             </ul>
                         </li>
                     </ul>
-                    <figure>
-                        <a href="/src/img/kali-linux/macOS_like_apperance.png">
-                            <img src="/src/img/kali-linux/macOS_like_apperance.png"
-                                alt="MacOS like appearance">
-                        </a>
-                    </figure>
                 </div>
             </div>
         </section>
