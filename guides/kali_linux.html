@@ -53,7 +53,7 @@
                     Boot into Kali Linux
                 </li>
                 <li>
-                    Optional configuration
+                    Customise the appearance to look like macOS
                 </li>
             </ol>
         </header>
@@ -418,10 +418,19 @@
                                     <p></p>
                                 </span>
                                 <span>
+                                    # check the *.efi files exists should contain boot.efi, grubx64.efi, and mmx64.efi
+                                </span>
+                                <span>
+                                    ls /run/live/medium/EFI/boot
+                                </span>
+                                <span>
+                                    <p></p>
+                                </span>
+                                <span>
                                     # copying boot files from live system to EFI system
                                 </span>
                                 <span>
-                                    cp -r /usr/lib/live/mount/medium/EFI/boot/* /mnt/boot/efi/EFI/BOOT/
+                                    cp -r /run/live/medium/EFI/boot/* /mnt/boot/efi/EFI/BOOT/
                                 </span>
                                 <span>
                                     <p></p>
@@ -609,18 +618,6 @@
                         </span>
                         <span>
                             update-initramfs -u
-                        </span>
-                        <span>
-                            <p></p>
-                        </span>
-                        <span>
-                            mkdir /boot/efi/boot/grub
-                        </span>
-                        <span>
-                            cp -r /boot/grub/* /boot/efi/boot/grub/
-                        </span>
-                        <span>
-                            <p></p>
                         </span>
                         <span>
                             update-grub -o /boot/efi/boot/grub/grub.cfg
@@ -814,22 +811,7 @@
                             Swap the command and control keys
                             <code>
                                 <span>
-                                    # add file
-                                </span>
-                                <span>
-                                    vim ~/.xprofile
-                                </span>
-                                <span>
-                                    <p></p>
-                                </span>
-                                <span>
-                                    # add the following command line and save the file
-                                </span>
-                                <span>
                                     setxkbmap -option ctrl:swap_lwin_lctl,ctrl:swap_rwin_rctl
-                                </span>
-                                <span>
-                                    # reboot or logout is required
                                 </span>
                             </code>
                         </li>
@@ -847,34 +829,15 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <figure>
-                                    <a href="/src/img/kali-linux/macOS_like_apperance.png">
-                                        <img src="/src/img/kali-linux/macOS_like_apperance.png"
-                                            alt="MacOS like appearance">
-                                    </a>
-                                </figure>
-                            </ul>
-                        </li>
-                        <li>
-                            Remove PulseAudio and switch to pipewire with rtkit
-                            <ul>
-                                <code>
-                                    <span>
-                                        sudo systemctl --user --now disable pulseaudio.service pulseaudio.socket
-                                    </span>
-                                    <span>
-                                        sudo apt install pipewire pipewire-alsa pipewire-pulse wireplumber
-                                    </span>
-                                    <span>
-                                        sudo systemctl --user enable --now pipewire pipewire-pulse wireplumber
-                                    </span>
-                                    <span>
-                                        # reboot required
-                                    </span>
-                                </code>
                             </ul>
                         </li>
                     </ul>
+                    <figure>
+                        <a href="/src/img/kali-linux/macOS_like_apperance.png">
+                            <img src="/src/img/kali-linux/macOS_like_apperance.png"
+                                alt="MacOS like appearance">
+                        </a>
+                    </figure>
                 </div>
             </div>
         </section>
