@@ -671,27 +671,46 @@
                             </code>
                         </li>
                         <li>
-                            Reboot your MacBook Pro and hold Command + R to enter macOS Recovery
-                        </li>
-                        <li>
-                            From the top menu bar, open Utilities > Startup Security Utility
+                            Follow these steps to update the NVRAM and it will fix suspend
                             <ul>
+                                <li>
+                                    Reboot your MacBook Pro and hold Command + R to enter macOS Recovery
+                                </li>
+                                <li>
+                                    From the top menu bar, open Utilities > Startup Security Utility
+                                </li>
+                                <li>
+                                    Set Secure Boot to: Full Security
+                                </li>
+                                <li>
+                                    Set External Boot to: Allow booting from external or removable media
+                                </li>
+                                <li>
+                                    Reboot the system
+                                </li>
+                                <li>
+                                    Restart and hold Option (⌥) key
+                                </li>
+                                <li>
+                                    Select your EFI system to boot and it will fail
+                                    <p>** This has worked for me hope it does for everyone **</p>
+                                </li>
+                                <li>
+                                    Reboot your MacBook Pro and hold Command + R to enter macOS Recovery
+                                </li>
                                 <li>
                                     Set Secure Boot to: No Security
                                 </li>
                                 <li>
                                     Set External Boot to: Allow booting from external or removable media
                                 </li>
+                                <li>
+                                    Reboot the system
+                                </li>
+                                <li>
+                                    Restart and hold Option (⌥) key
+                                </li>
                             </ul>
-                        </li>
-                        <li>
-                            Reboot the system
-                        </li>
-                        <li>
-                            Restart and hold Option (⌥) key
-                        </li>
-                        <li>
-                            Select GRUB from the boot options and select the GNU/Linux
                         </li>
                     </ul>
                 </div>
